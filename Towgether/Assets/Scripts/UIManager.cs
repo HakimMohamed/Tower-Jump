@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject Tilt;
     [SerializeField] GameObject FirstPlatform;
     [SerializeField] GameObject PauseButtonObject;
+   
     //Transform
     Transform positionTORestart;
     Transform Player_transform;
@@ -37,7 +38,7 @@ public class UIManager : MonoBehaviour
         GameOverMenu.SetActive(false);
         lvlgenscript.enabled = false;
         Tilt.SetActive(true);
-
+       
     }
 
 
@@ -60,7 +61,7 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         rb.bodyType = RigidbodyType2D.Dynamic;
         PauseButtonObject.SetActive(true);
-
+        FirstPlatform.AddComponent<FirstPlatformJump>();
     }
     private void GameLost()
     {
