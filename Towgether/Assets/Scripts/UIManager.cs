@@ -16,7 +16,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject FirstPlatform;
     [SerializeField] GameObject PauseButtonObject;
     [SerializeField] GameObject BoostBar;
-   
+    [SerializeField] GameObject pressAnyWhereToStart;
+    [SerializeField] GameObject ScoreText;
     //Transform
     Transform positionTORestart;
     Transform Player_transform;
@@ -33,23 +34,31 @@ public class UIManager : MonoBehaviour
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         lvlgenscript = GameObject.Find("LevelGenerator").GetComponent<levelgen>();
 
-     
         PlayerScript.enabled = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
         GameOverMenu.SetActive(false);
         lvlgenscript.enabled = false;
-        Tilt.SetActive(true);
-        BoostBar.SetActive(true);
+        pressAnyWhereToStart.SetActive(false);
+        ScoreText.SetActive(false);
+
+
+
     }
 
+    void GameStartedMainCameraEvent()
+    {
+        BoostBar.SetActive(true);
+        Tilt.SetActive(true);
+        pressAnyWhereToStart.SetActive(true);
+        ScoreText.SetActive(true);
 
+    }
     void Update()
     {
         if (Input.anyKey)
         {
             GameStarted();
-            lvlgenscript.enabled = true;
-            Tilt.SetActive(false);
+            
         }
         if (Player_transform.transform.position.y < positionTORestart.position.y) 
         {
@@ -62,6 +71,8 @@ public class UIManager : MonoBehaviour
         Time.timeScale = 1f;
         rb.bodyType = RigidbodyType2D.Dynamic;
         PauseButtonObject.SetActive(true);
+        lvlgenscript.enabled = true;
+        Tilt.SetActive(false);
         FirstPlatform.AddComponent<FirstPlatformJump>();
     }
     private void GameLost()
