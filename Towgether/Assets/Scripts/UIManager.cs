@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject Tilt;
     [SerializeField] GameObject FirstPlatform;
     [SerializeField] GameObject PauseButtonObject;
+    [SerializeField] GameObject BoostBar;
    
     //Transform
     Transform positionTORestart;
@@ -38,7 +39,7 @@ public class UIManager : MonoBehaviour
         GameOverMenu.SetActive(false);
         lvlgenscript.enabled = false;
         Tilt.SetActive(true);
-       
+        BoostBar.SetActive(true);
     }
 
 
@@ -71,8 +72,10 @@ public class UIManager : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Static;
         IsGameLost = true;
         PauseButtonObject.SetActive(false);
+        BoostBar.SetActive(false);
+        
     }
-  
+
     public void PauseButton()
     {
         if (!IsGameLost)
