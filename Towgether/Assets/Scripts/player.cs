@@ -114,6 +114,7 @@ public class player : MonoBehaviour
         anim.SetBool("Isgrounded", isGrounded);
 
         movement = Input.acceleration.x* movementSpeed;
+        movement = Input.GetAxisRaw("Horizontal")*movementSpeed;
         Handlingflip();
 
        

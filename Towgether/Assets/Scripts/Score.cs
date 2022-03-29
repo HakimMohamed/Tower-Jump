@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class Score : MonoBehaviour
 {
-
-
-
-
-
-
     [SerializeField] Transform player;
     [SerializeField] Text HighScoreText;
     Text score;
@@ -45,7 +39,11 @@ public class Score : MonoBehaviour
             PlayerPrefs.SetInt(highScoreKey, scorenum);
             PlayerPrefs.Save();
             HighScoreText.text = scorenum.ToString();
-
+            
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            PlayerPrefs.DeleteAll();
         }
 
     }

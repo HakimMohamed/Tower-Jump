@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1154, y: 0}
-  m_SizeDelta: {x: 476.97754, y: 89.43329}
+  m_AnchoredPosition: {x: -896.24, y: 0}
+  m_SizeDelta: {x: 992.49, y: 89.433}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &16090418
 MonoBehaviour:
@@ -394,7 +394,6 @@ GameObject:
   - component: {fileID: 118146299}
   - component: {fileID: 118146302}
   - component: {fileID: 118146301}
-  - component: {fileID: 118146300}
   m_Layer: 5
   m_Name: HighestScoreText
   m_TagString: Untagged
@@ -421,18 +420,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00000071526, y: -67.037}
   m_SizeDelta: {x: 800.317, y: 84.643}
   m_Pivot: {x: 0.5, y: 1}
---- !u!114 &118146300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118146298}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0afab7fd632394d489f9adba40d0491c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &118146301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6671,7 +6658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1086390588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: -0.1914, y: -4, z: 0}
   m_LocalScale: {x: 5.165027, y: 0.6625232, z: 0.5637151}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6695,7 +6682,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 11, y: 2.5}
-    newSize: {x: 6.9891634, y: 2.9961207}
+    newSize: {x: 6.3960915, y: 2.9961207}
     adaptiveTilingThreshold: 0.5
     drawMode: 1
     adaptiveTiling: 0
@@ -6767,7 +6754,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 1
-  m_Size: {x: 6.9891634, y: 2.9961207}
+  m_Size: {x: 6.3960915, y: 2.9961207}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -6808,7 +6795,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1124506841
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13316,8 +13303,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: 15.63486, y: -27.97}
-  - {x: 15.55918, y: 27.97}
+  - {x: 13.38, y: -27.97}
+  - {x: 13.38, y: 27.97}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
@@ -13358,8 +13345,8 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0
   m_Points:
-  - {x: -15.634859, y: -27.97}
-  - {x: -15.559176, y: 27.97}
+  - {x: -13.38, y: -27.97}
+  - {x: -13.38, y: 27.97}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
