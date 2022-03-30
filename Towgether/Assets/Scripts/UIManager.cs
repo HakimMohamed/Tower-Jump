@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
     Rigidbody2D rb;
 
     bool IsGameLost;
+    bool IsGameStarted;
 
     void Awake()
     {
@@ -40,7 +41,8 @@ public class UIManager : MonoBehaviour
         lvlgenscript.enabled = false;
         pressAnyWhereToStart.SetActive(false);
         ScoreText.SetActive(false);
-
+        PauseMenu.SetActive(false);
+        IsGameStarted = false;
 
 
     }
@@ -55,10 +57,14 @@ public class UIManager : MonoBehaviour
     }
     void Update()
     {
-        if (Input.anyKey)
+        if (Input.anyKey&& !IsGameStarted)
+        {
+         
+            IsGameStarted=true;
+        }
+        if (IsGameStarted)
         {
             GameStarted();
-            
         }
         if (Player_transform.transform.position.y < positionTORestart.position.y) 
         {
@@ -67,7 +73,7 @@ public class UIManager : MonoBehaviour
     }
     private void GameStarted()
     {
-        Debug.Log("GameStarted");
+        
         Time.timeScale = 1f;
         rb.bodyType = RigidbodyType2D.Dynamic;
         PauseButtonObject.SetActive(true);
@@ -78,7 +84,6 @@ public class UIManager : MonoBehaviour
     private void GameLost()
     {
         GameOverMenu.SetActive(true);
-        Debug.Log("Lost");
         PlayerScript.enabled = false;
         rb.bodyType = RigidbodyType2D.Static;
         IsGameLost = true;
@@ -106,6 +111,7 @@ public class UIManager : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         PauseMenu.SetActive(false);
         PauseButtonObject.SetActive(true);
+        Debug.Log("Pressed");
     }
     public void RestartButton()
     {
