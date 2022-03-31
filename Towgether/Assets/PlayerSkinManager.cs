@@ -45,11 +45,11 @@ public class PlayerSkinManager : MonoBehaviour
                 break;
 
             case "slime-walk-01":
-                PlayerObject.GetComponent<Animator>().runtimeAnimatorController = astronoutAnim as RuntimeAnimatorController;
+                PlayerObject.GetComponent<Animator>().runtimeAnimatorController = SlimeAnim as RuntimeAnimatorController;
                 break;
 
             case "Astronaut_7":
-                PlayerObject.GetComponent<Animator>().runtimeAnimatorController = SlimeAnim as RuntimeAnimatorController;
+                PlayerObject.GetComponent<Animator>().runtimeAnimatorController = astronoutAnim as RuntimeAnimatorController;
                 break;
         }
     }

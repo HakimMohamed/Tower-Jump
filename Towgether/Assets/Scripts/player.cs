@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
 public class player : MonoBehaviour
@@ -39,10 +40,13 @@ public class player : MonoBehaviour
     [SerializeField] float BoostCooldownMax;
     [SerializeField] bool increaseBoost ;
 
-    
+
+
+   
+   
     private void Awake()
     {
-        
+       
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sp = GetComponent<SpriteRenderer>();       
@@ -57,10 +61,10 @@ public class player : MonoBehaviour
         boostScript.setboost(0f);
     }
 
-    void HandleBoostUsage()
+   public void HandleBoostUsage()
     {
 
-        if (Input.GetMouseButton(0)&&BoostCapacity>0&&!increaseBoost)
+        if (Input.GetMouseButton(0) && BoostCapacity>0&&!increaseBoost)
         {
             rb.gravityScale = 1f;
             BoostCapacity -= Time.deltaTime;
@@ -119,10 +123,10 @@ public class player : MonoBehaviour
 
        
         rb.velocity = new Vector2( movement, rb.velocity.y);
-       
-        
 
-       
+
+
+
         HandleBoostUsage();
         timeForPowerUpHandler();
        
@@ -211,7 +215,7 @@ public class player : MonoBehaviour
         if (isGrounded && timerForPowerUp > 0&&collision.transform.tag=="Ground")
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpforce * 1.1f, ForceMode2D.Impulse);
-            anim.SetTrigger("Jump");
+          
             Dust2.Play();
             SoundManager.PlaySound(SoundManager.Sound.Jump);
         }

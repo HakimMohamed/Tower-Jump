@@ -1215,7 +1215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartMenu: {fileID: 1130361958}
-  StartText: {fileID: 571521038}
+  Coins: {fileID: 2022008191}
+  ShopMenu: {fileID: 408479407}
   Facebook: {fileID: 685340567}
   Instgram: {fileID: 1732781080}
   Reddit: {fileID: 161932713}
@@ -2255,7 +2256,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 27.72585
+  orthographic size: 12.7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2314,7 +2315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3600508206178045299, guid: e78c495bc5669fc4d848251aa035a4d1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.2
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 3600508206178045299, guid: e78c495bc5669fc4d848251aa035a4d1, type: 3}
       propertyPath: m_LocalPosition.z

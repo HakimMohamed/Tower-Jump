@@ -6,12 +6,12 @@ public class PinkPlatform : MonoBehaviour
 {
     float Jumpforce = 64f;
     GameObject player;
-    Animator anim;
+ 
 
     private void Awake()
     {
         player = GameObject.Find("Player");
-        anim = player.GetComponent<Animator>();
+       
     }
 
 
@@ -25,7 +25,7 @@ public class PinkPlatform : MonoBehaviour
                 Vector2 velocity = rb.velocity;
                 velocity.y = Jumpforce;
                 rb.velocity = velocity;
-                anim.SetTrigger("Jump");
+               
                 SoundManager.PlaySound(SoundManager.Sound.Jump);
             }
           

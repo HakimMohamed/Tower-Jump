@@ -9,7 +9,9 @@ public class StartManager : MonoBehaviour
 
     bool started;
     [SerializeField] Image StartMenu;
-    [SerializeField] Text StartText;
+    [SerializeField] Image Coins;
+
+    [SerializeField] Image ShopMenu;
     [SerializeField] Image Facebook;
     [SerializeField] Image Instgram;
     [SerializeField] Image Reddit;
@@ -50,6 +52,12 @@ public class StartManager : MonoBehaviour
 
         DissolveItem settings = new DissolveItem(Settings, Settings.color, Settings.color.a);
         settings.Alphadecrease();
+
+        DissolveItem shopmenu = new DissolveItem(ShopMenu, ShopMenu.color, ShopMenu.color.a);
+        shopmenu.Alphadecrease();
+
+        DissolveItem coins = new DissolveItem(Coins, Coins.color, Coins.color.a);
+        coins.Alphadecrease();
 
         if (Settings.color.a <= 0)
         {

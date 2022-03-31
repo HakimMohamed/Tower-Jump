@@ -8,11 +8,12 @@ public class SkinsManager : MonoBehaviour
 {
     public SpriteRenderer sr;
     public List<Sprite> skins = new List<Sprite>();
-    private int selectedSkin = 0;
+    private static int selectedSkin = 0;
     public GameObject PlayerSkin;
 
     public void NextOption()
     {
+        selectedSkin = PlayerPrefs.GetInt("selectedSkin", 0);
         selectedSkin += 1;
         if(selectedSkin == skins.Count)
         {
@@ -20,6 +21,8 @@ public class SkinsManager : MonoBehaviour
         }
         sr.sprite = skins[selectedSkin];
         PrefabUtility.SaveAsPrefabAsset(PlayerSkin, "Assets/Skins/SelectedSkin.prefab");
+        PlayerPrefs.SetInt("selectedSkin", selectedSkin);
+        PlayerPrefs.Save();
     }
     public void BackOption()
     {
@@ -30,6 +33,8 @@ public class SkinsManager : MonoBehaviour
         }
         sr.sprite = skins[selectedSkin];
         PrefabUtility.SaveAsPrefabAsset(PlayerSkin, "Assets/Skins/SelectedSkin.prefab");
+        PlayerPrefs.SetInt("selectedSkin", selectedSkin);
+        PlayerPrefs.Save();
     }
     
 }
