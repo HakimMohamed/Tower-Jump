@@ -111,7 +111,7 @@ public class player : MonoBehaviour
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(GroundCheckPosition.position, CheckRaidus, WhatIsGround);
-        anim.SetBool("Isgrounded", isGrounded);
+        
 
         movement = Input.acceleration.x* movementSpeed;
         movement = Input.GetAxisRaw("Horizontal")*movementSpeed;
@@ -119,8 +119,8 @@ public class player : MonoBehaviour
 
        
         rb.velocity = new Vector2( movement, rb.velocity.y);
-        anim.SetFloat("Speed", Mathf.Abs(movement));
-
+       
+        
 
        
         HandleBoostUsage();

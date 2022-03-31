@@ -822,6 +822,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 557773454}
   m_CullTransparentMesh: 1
+--- !u!1 &573124403
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 573124405}
+  - component: {fileID: 573124404}
+  m_Layer: 0
+  m_Name: SkinManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &573124404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573124403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91de1547b544cc24e84a0c3b260aa179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SelectedSkin: {fileID: 7734714784236353252, guid: e78c495bc5669fc4d848251aa035a4d1, type: 3}
+  PlayerObject: {fileID: 1687573446}
+  blueanim: {fileID: 22100000, guid: c69c5a70c0c2f564d81f0ec72f4af707, type: 2}
+  pinkanim: {fileID: 22100000, guid: 7ecf9dfcf3a856142a15685514676ff5, type: 2}
+  detectiveanim: {fileID: 22100000, guid: 77ebc33541984af438122191b2acc2cc, type: 2}
+  skeletonANim: {fileID: 22100000, guid: 9c58e5af2c43c0840983ba0a1ed580c5, type: 2}
+  GoodSkinanim: {fileID: 22100000, guid: 5bff3434fa3c5004782bea3b6f2e8c2c, type: 2}
+  SlimeAnim: {fileID: 22100000, guid: 856bf091318fc0d47bd0926ea6dafe5e, type: 2}
+  astronoutAnim: {fileID: 22100000, guid: cdb2f4aaed286554fb20f1930a1ac415, type: 2}
+--- !u!4 &573124405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573124403}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 47.63146, y: 52.163124, z: -4165.8135}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &587005990
 GameObject:
   m_ObjectHideFlags: 0
@@ -7405,7 +7457,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -81
   m_Sprite: {fileID: 21300000, guid: 730c911464148054487bb3efd7ef0d07, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -7771,7 +7823,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.49916807, y: 0.5324459}
+  m_Size: {x: 2.142857, y: 2.2857144}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7785,7 +7837,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687573446}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: -1.5, z: 0}
+  m_LocalPosition: {x: -0.3, y: -1.5, z: 0}
   m_LocalScale: {x: 0.92692244, y: 0.92692244, z: 0.92692244}
   m_Children:
   - {fileID: 1865805334}
@@ -7804,7 +7856,7 @@ Animator:
   m_GameObject: {fileID: 1687573446}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f07b6955ee40a5f4186f7c5fe592c77f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4af694ffbd0d8784fae4cf08106d8112, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
