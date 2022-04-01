@@ -9,7 +9,7 @@ public class player : MonoBehaviour
     [SerializeField] ParticleSystem Dust2;
     
     Rigidbody2D rb;
-    Animator anim;
+   
     SpriteRenderer sp;
 
     [Header("GroundCheck")]
@@ -48,7 +48,6 @@ public class player : MonoBehaviour
     {
        
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
         sp = GetComponent<SpriteRenderer>();       
         BoostCapacityMax = 1f;
         BoostCapacity= 0f;
@@ -136,34 +135,6 @@ public class player : MonoBehaviour
    
     
    
-    void HandleJumpForPc()
-    {
-        //if ( Input.GetMouseButtonDown(0) && isGrounded && timerForPowerUp > 0)
-        //{
-        //    GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpforce * 2f, ForceMode2D.Impulse);
-        //    anim.SetTrigger("Jump");
-        //    Dust2.Play();
-        //    SoundManager.PlaySound(SoundManager.Sound.Jump);
-        //}
-        
-        //if ( Input.GetMouseButtonDown(0) && isGrounded && timerForPowerUp <= 0)
-        //{
-        //    GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpforce, ForceMode2D.Impulse);
-        //    anim.SetTrigger("Jump");
-        //    SoundManager.PlaySound(SoundManager.Sound.Jump);
-        //}
-
-        //if (rb.velocity.y < 0)
-        //{
-        //    rb.velocity += Physics2D.gravity.y * (fallmutliplier - 1) * Time.deltaTime * Vector2.up;
-        //}
-        //else if (!Input.GetMouseButton(0))
-        //{      
-        //    if(rb.velocity.y > 0)
-        //    rb.velocity += Physics2D.gravity.y * (lowJumpMutliplier - 1)*Time.deltaTime *Vector2.up;
-        //}
-        
-    }
    
     void timeForPowerUpHandler()
     {

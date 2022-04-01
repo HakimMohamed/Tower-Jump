@@ -25,7 +25,7 @@ public class UIManager : MonoBehaviour
 
     bool IsGameLost;
     bool IsGameStarted;
-
+    bool Ispaused;
     void Awake()
     {
         //Refrences
@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
         ScoreText.SetActive(false);
         PauseMenu.SetActive(false);
         IsGameStarted = false;
-
+        Ispaused = false;
 
     }
 
@@ -62,7 +62,7 @@ public class UIManager : MonoBehaviour
          
             IsGameStarted=true;
         }
-        if (IsGameStarted)
+        if (IsGameStarted&& !Ispaused)
         {
             GameStarted();
         }
@@ -89,23 +89,25 @@ public class UIManager : MonoBehaviour
         IsGameLost = true;
         PauseButtonObject.SetActive(false);
         BoostBar.SetActive(false);
-        
+        IsGameLost = true;
     }
 
     public void PauseButton()
     {
-        if (!IsGameLost)
+        if (!IsGameLost&&IsGameStarted)
         {
+            Ispaused=true;
             Time.timeScale = 0f;
             PlayerScript.enabled = false;
             rb.bodyType = RigidbodyType2D.Static;
             PauseMenu.SetActive(true);
             PauseButtonObject.SetActive(false);
-
+            Debug.Log("Paused");
         }
     }
     public void ResumeButton()
     {
+        
         Time.timeScale = 1f;
         PlayerScript.enabled = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
@@ -123,5 +125,6 @@ public class UIManager : MonoBehaviour
     public void MainMenuButton()
     {
         SceneManager.LoadScene("StartMenu");
+        Time.timeScale = 1f;
     }
 }

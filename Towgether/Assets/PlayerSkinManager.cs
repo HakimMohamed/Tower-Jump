@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class PlayerSkinManager : MonoBehaviour
 {
-    public GameObject SelectedSkin;
-    public GameObject PlayerObject;
-
-    private Sprite PlayerSprite;
-
+    [SerializeField] GameObject PlayerObject;
     public AnimatorOverrideController blueanim;
     public AnimatorOverrideController pinkanim;
     public AnimatorOverrideController detectiveanim;
@@ -16,42 +12,60 @@ public class PlayerSkinManager : MonoBehaviour
     public AnimatorOverrideController GoodSkinanim;
     public AnimatorOverrideController SlimeAnim;
     public AnimatorOverrideController astronoutAnim;
+    static int SelectedVAr;
+
     void Awake()
     {
+        SelectedVAr = PlayerPrefs.GetInt("selectedSkin", 0);
+        if (SelectedVAr == 0)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = blueanim as RuntimeAnimatorController;
 
-        PlayerSprite = SelectedSkin.GetComponent<SpriteRenderer>().sprite;
-        PlayerObject.GetComponent<SpriteRenderer>().sprite = PlayerSprite;
+        if (SelectedVAr == 1)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = pinkanim as RuntimeAnimatorController;
 
-        switch (PlayerSprite.name)
-        {
-            case "BlobPlayer_Blue_0":
-                PlayerObject.GetComponent<Animator>().runtimeAnimatorController = blueanim as RuntimeAnimatorController;
-                break;
+        if (SelectedVAr == 2)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skeletonANim as RuntimeAnimatorController;
 
-            case "BlobPlayer_Pink_0":
-                PlayerObject.GetComponent<Animator>().runtimeAnimatorController = pinkanim as RuntimeAnimatorController;
-                break;
+        if (SelectedVAr == 3)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = detectiveanim as RuntimeAnimatorController;
 
-            case "Detective_8":
-                PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skeletonANim as RuntimeAnimatorController;
-                break;
 
-            case "Detective_0":
-                PlayerObject.GetComponent<Animator>().runtimeAnimatorController = detectiveanim as RuntimeAnimatorController;
-                break;        
+        if (SelectedVAr == 4)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = GoodSkinanim as RuntimeAnimatorController;
 
-            case "idle":
-                PlayerObject.GetComponent<Animator>().runtimeAnimatorController = GoodSkinanim as RuntimeAnimatorController;
-                break;
 
-            case "slime-walk-01":
-                PlayerObject.GetComponent<Animator>().runtimeAnimatorController = SlimeAnim as RuntimeAnimatorController;
-                break;
+        if (SelectedVAr == 5)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = SlimeAnim as RuntimeAnimatorController;
 
-            case "Astronaut_7":
-                PlayerObject.GetComponent<Animator>().runtimeAnimatorController = astronoutAnim as RuntimeAnimatorController;
-                break;
-        }
+
+        if (SelectedVAr == 6)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = astronoutAnim as RuntimeAnimatorController;
     }
+    void Update()
+    {
+        Debug.Log(PlayerPrefs.GetInt("selectedSkin", 0));
+        SelectedVAr = PlayerPrefs.GetInt("selectedSkin", 0);
 
-} 
+        if (SelectedVAr == 0)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = blueanim as RuntimeAnimatorController;
+
+        if (SelectedVAr == 1)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = pinkanim as RuntimeAnimatorController;
+
+        if (SelectedVAr == 2)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skeletonANim as RuntimeAnimatorController;
+
+        if (SelectedVAr == 3)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = SlimeAnim as RuntimeAnimatorController;
+
+        if (SelectedVAr == 4)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = detectiveanim as RuntimeAnimatorController;
+
+        
+        if (SelectedVAr == 5)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = astronoutAnim as RuntimeAnimatorController;
+
+        if (SelectedVAr == 6)
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = GoodSkinanim as RuntimeAnimatorController;
+    }
+}

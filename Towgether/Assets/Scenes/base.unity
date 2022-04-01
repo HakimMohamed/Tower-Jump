@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 573124405}
   - component: {fileID: 573124404}
   m_Layer: 0
-  m_Name: SkinManager
+  m_Name: PlayerSkinManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -851,7 +851,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91de1547b544cc24e84a0c3b260aa179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SelectedSkin: {fileID: 7734714784236353252, guid: e78c495bc5669fc4d848251aa035a4d1, type: 3}
   PlayerObject: {fileID: 1687573446}
   blueanim: {fileID: 22100000, guid: c69c5a70c0c2f564d81f0ec72f4af707, type: 2}
   pinkanim: {fileID: 22100000, guid: 7ecf9dfcf3a856142a15685514676ff5, type: 2}
