@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour
         BoostBar.SetActive(true);
         Tilt.SetActive(true);
         pressAnyWhereToStart.SetActive(true);
-        ScoreText.SetActive(true);
+       
 
     }
     void Update()
@@ -82,6 +82,7 @@ public class UIManager : MonoBehaviour
         lvlgenscript.enabled = true;
         Tilt.SetActive(false);
         FirstPlatform.AddComponent<FirstPlatformJump>();
+        ScoreText.SetActive(true);
     }
     private void GameLost()
     {

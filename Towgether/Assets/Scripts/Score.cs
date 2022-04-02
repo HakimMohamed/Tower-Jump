@@ -22,6 +22,8 @@ public class Score : MonoBehaviour
     void AddGold()
     {
         CurrentScore += 1;
+        PlayerPrefs.SetInt("CurrentScore", CurrentScore);
+        PlayerPrefs.Save();
     }
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class Score : MonoBehaviour
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         HighScoreText.text = highScore.ToString();
         CurrentScore = PlayerPrefs.GetInt("CurrentScore", 0);
+        InvokeRepeating(nameof(AddGold), 2,1);
     }
     void Update()
     {
@@ -36,9 +39,8 @@ public class Score : MonoBehaviour
         if (player.position.y > 0 && player.position.y > scorenum)
         {
             AddScore();
-            InvokeRepeating("AddGold",2,2);
-            PlayerPrefs.SetInt("CurrentScore", CurrentScore);
-            PlayerPrefs.Save();
+            
+            
         }
 
         score.text = scorenum.ToString("0").Normalize();

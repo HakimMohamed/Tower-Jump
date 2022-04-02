@@ -117,7 +117,7 @@ public class player : MonoBehaviour
         
 
         movement = Input.acceleration.x* movementSpeed;
-       // movement = Input.GetAxisRaw("Horizontal")*movementSpeed;
+        movement = Input.GetAxisRaw("Horizontal")*movementSpeed;
         Handlingflip();
 
        
