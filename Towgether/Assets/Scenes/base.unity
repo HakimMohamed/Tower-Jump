@@ -7520,6 +7520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1687573451}
   HighScoreText: {fileID: 118146301}
+  manager: {fileID: 2040804408}
 --- !u!114 &1602110338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13312,7 +13313,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040804402}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2, y: -1.5, z: -10}
+  m_LocalPosition: {x: -0.2, y: -3.1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1591030239}
@@ -13380,6 +13381,7 @@ MonoBehaviour:
   BoostBar: {fileID: 610867479}
   pressAnyWhereToStart: {fileID: 981857559}
   ScoreText: {fileID: 1602110335}
+  IsGameLost: 0
 --- !u!68 &2040804409
 EdgeCollider2D:
   m_ObjectHideFlags: 0

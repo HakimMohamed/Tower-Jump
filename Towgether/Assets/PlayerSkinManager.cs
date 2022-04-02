@@ -43,7 +43,7 @@ public class PlayerSkinManager : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(PlayerPrefs.GetInt("selectedSkin", 0));
+        
         SelectedVAr = PlayerPrefs.GetInt("selectedSkin", 0);
 
         if (SelectedVAr == 0)

@@ -23,9 +23,11 @@ public class UIManager : MonoBehaviour
     Transform Player_transform;
     Rigidbody2D rb;
 
-    bool IsGameLost;
+   public bool IsGameLost;
     bool IsGameStarted;
     bool Ispaused;
+
+   
     void Awake()
     {
         //Refrences
@@ -59,7 +61,7 @@ public class UIManager : MonoBehaviour
     {
         if (Input.anyKey&& !IsGameStarted)
         {
-         
+            
             IsGameStarted=true;
         }
         if (IsGameStarted&& !Ispaused)
@@ -89,7 +91,7 @@ public class UIManager : MonoBehaviour
         IsGameLost = true;
         PauseButtonObject.SetActive(false);
         BoostBar.SetActive(false);
-        IsGameLost = true;
+        IsGameLost = true;        
     }
 
     public void PauseButton()

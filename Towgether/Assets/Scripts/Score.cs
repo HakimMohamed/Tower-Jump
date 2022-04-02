@@ -7,20 +7,28 @@ public class Score : MonoBehaviour
 {
     [SerializeField] Transform player;
     [SerializeField] Text HighScoreText;
+    [SerializeField] UIManager manager;
     Text score;
     int highScore;
     int scorenum;
     string highScoreKey = "HighScore";
-   
+
+
+    int CurrentScore;
     void AddScore()
     {
         scorenum++;
+    }
+    void AddGold()
+    {
+        CurrentScore += 1;
     }
     private void Awake()
     {
         score = GetComponent<Text>();
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         HighScoreText.text = highScore.ToString();
+        CurrentScore = PlayerPrefs.GetInt("CurrentScore", 0);
     }
     void Update()
     {
@@ -28,6 +36,9 @@ public class Score : MonoBehaviour
         if (player.position.y > 0 && player.position.y > scorenum)
         {
             AddScore();
+            InvokeRepeating("AddGold",2,2);
+            PlayerPrefs.SetInt("CurrentScore", CurrentScore);
+            PlayerPrefs.Save();
         }
 
         score.text = scorenum.ToString("0").Normalize();
@@ -45,6 +56,8 @@ public class Score : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
         }
+       
+        
 
     }
 }

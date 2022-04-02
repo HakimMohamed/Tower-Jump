@@ -17,17 +17,19 @@ public class camera : MonoBehaviour
     float timer;
     float CameraMoveSpeed = 9f;
 
-
+   
     private void Awake()
     {
         playerStartedPlaying = false;
         timer = 0f;
         setDiffculty(Diffculty.easy);
         SpeedText.text = "0x";
+        
+
     }
-  
-  
-   
+
+
+
     void LateUpdate()
     {
         timer += Time.deltaTime;
@@ -40,6 +42,8 @@ public class camera : MonoBehaviour
         
 
         UpdateCameraPosition();
+
+        
     }
     void UpdateCameraPosition()
     {
