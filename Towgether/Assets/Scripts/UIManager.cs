@@ -72,6 +72,10 @@ public class UIManager : MonoBehaviour
         {
              GameLost();
         }
+        if (Player_transform.transform.position.y>5f)
+        {
+            ScoreText.SetActive(true);
+        }
     }
     private void GameStarted()
     {
@@ -82,10 +86,11 @@ public class UIManager : MonoBehaviour
         lvlgenscript.enabled = true;
         Tilt.SetActive(false);
         FirstPlatform.AddComponent<FirstPlatformJump>();
-        ScoreText.SetActive(true);
+       
     }
     private void GameLost()
     {
+        Time.timeScale = 1f;
         GameOverMenu.SetActive(true);
         PlayerScript.enabled = false;
         rb.bodyType = RigidbodyType2D.Static;
