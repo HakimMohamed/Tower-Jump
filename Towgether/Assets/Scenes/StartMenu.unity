@@ -2018,9 +2018,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 310837595}
-        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
-        m_MethodName: BackButtonPressed
+      - m_Target: {fileID: 953829997}
+        m_TargetAssemblyTypeName: SkinsManager, Assembly-CSharp
+        m_MethodName: PurcahseButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -6,15 +6,27 @@ public class FirstPlatformJump : MonoBehaviour
 {
     float Jumpforce = 64f;
     GameObject player;
-    
+    private static FirstPlatformJump instance;
     private void Awake()
     {
         player = GameObject.Find("Player");
-       
+      
+    }
+    private void Start()
+    {
+        
     }
     private void Update()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+
+        }
+        else
+        {
+            DestroyImmediate(gameObject.GetComponent<FirstPlatformJump>());
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
