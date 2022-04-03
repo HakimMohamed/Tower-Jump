@@ -31,7 +31,7 @@ public class Score : MonoBehaviour
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         HighScoreText.text = highScore.ToString();
         CurrentScore = PlayerPrefs.GetInt("CurrentScore", 0);
-        InvokeRepeating(nameof(AddGold), 2.2f,1);
+        InvokeRepeating(nameof(AddGold), 1.2f,1);
     }
     void Update()
     {
