@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
    
     void Awake()
     {
+       
         //Refrences
         PlayerScript = GameObject.Find("Player").GetComponent<player>();
         positionTORestart = GameObject.Find("PositionToRestart").transform;
@@ -60,6 +61,7 @@ public class UIManager : MonoBehaviour
     }
     void Update()
     {
+        Time.timeScale = 1f;
         if (Input.anyKey&& !IsGameStarted)
         {
             

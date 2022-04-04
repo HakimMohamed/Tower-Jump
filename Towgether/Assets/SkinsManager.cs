@@ -14,7 +14,7 @@ public class SkinsManager : MonoBehaviour
 
     [SerializeField]  GameObject PurchaseSkinButton;
     [SerializeField] GameObject priceOfSkin;
-    int price=1000;
+  
 
     bool Owned;
     CurrentSkin currentSkin;
@@ -41,7 +41,7 @@ public class SkinsManager : MonoBehaviour
     }
     public void PurcahseButton()
     {
-        if (selectedSkin == 2&& CurrentMoney>= price)
+        if (selectedSkin == 2&& CurrentMoney>= 1000)
         {
             SoundManager.PlaySound(SoundManager.Sound.BuySkin);
 
@@ -57,7 +57,7 @@ public class SkinsManager : MonoBehaviour
             PlayerPrefs.Save();
 
         }
-        if (selectedSkin == 3&& CurrentMoney >= price)
+        if (selectedSkin == 3&& CurrentMoney >= 1500)
         {
             SoundManager.PlaySound(SoundManager.Sound.BuySkin);
 
@@ -72,7 +72,7 @@ public class SkinsManager : MonoBehaviour
             PlayerPrefs.SetInt("CurrentScore", CurrentMoney);
             PlayerPrefs.Save();
         }
-        if (selectedSkin == 4 && CurrentMoney >= price)
+        if (selectedSkin == 4 && CurrentMoney >= 2500)
         {
             SoundManager.PlaySound(SoundManager.Sound.BuySkin);
 
@@ -87,7 +87,7 @@ public class SkinsManager : MonoBehaviour
             PlayerPrefs.SetInt("CurrentScore", CurrentMoney);
             PlayerPrefs.Save();
         }
-        if (selectedSkin == 5 && CurrentMoney >= price)
+        if (selectedSkin == 5 && CurrentMoney >= 5000)
         {
             SoundManager.PlaySound(SoundManager.Sound.BuySkin);
 
@@ -103,7 +103,7 @@ public class SkinsManager : MonoBehaviour
             PlayerPrefs.SetInt("CurrentScore", CurrentMoney);
             PlayerPrefs.Save();
         }
-        if (selectedSkin == 6 && CurrentMoney >= price)
+        if (selectedSkin == 6 && CurrentMoney >= 10000)
         {
             SoundManager.PlaySound(SoundManager.Sound.BuySkin);
 
