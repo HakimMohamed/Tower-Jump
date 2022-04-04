@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject BoostBar;
     [SerializeField] GameObject pressAnyWhereToStart;
     [SerializeField] GameObject ScoreText;
+    [SerializeField] GameObject Camera;
     //Transform
     Transform positionTORestart;
     Transform Player_transform;
@@ -79,14 +80,15 @@ public class UIManager : MonoBehaviour
     }
     private void GameStarted()
     {
-        
         Time.timeScale = 1f;
         rb.bodyType = RigidbodyType2D.Dynamic;
         PauseButtonObject.SetActive(true);
         lvlgenscript.enabled = true;
         Tilt.SetActive(false);
-        FirstPlatform.AddComponent<FirstPlatformJump>();
-       
+        if (!IsGameLost)
+        {
+            FirstPlatform.AddComponent<FirstPlatformJump>();
+        }
     }
     private void GameLost()
     {
@@ -102,10 +104,10 @@ public class UIManager : MonoBehaviour
 
     public void PauseButton()
     {
-        if (!IsGameLost&&IsGameStarted)
+        if (IsGameLost==false)
         {
             Ispaused=true;
-            Time.timeScale = 0f;
+            Camera.GetComponent<camera>().enabled = false;
             PlayerScript.enabled = false;
             rb.bodyType = RigidbodyType2D.Static;
             PauseMenu.SetActive(true);
@@ -115,7 +117,7 @@ public class UIManager : MonoBehaviour
     }
     public void ResumeButton()
     {
-        
+        Camera.GetComponent<camera>().enabled = true;
         Time.timeScale = 1f;
         PlayerScript.enabled = true;
         rb.bodyType = RigidbodyType2D.Dynamic;

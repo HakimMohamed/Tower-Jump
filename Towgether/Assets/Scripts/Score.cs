@@ -13,6 +13,7 @@ public class Score : MonoBehaviour
     int scorenum;
     string highScoreKey = "HighScore";
 
+    int oldScore;
 
     int CurrentScore;
     void AddScore()
@@ -21,17 +22,20 @@ public class Score : MonoBehaviour
     }
     void AddGold()
     {
-        CurrentScore += 1;
+        CurrentScore += Random.Range(2,6);
         PlayerPrefs.SetInt("CurrentScore", CurrentScore);
         PlayerPrefs.Save();
+        
     }
     private void Awake()
     {
+        oldScore = PlayerPrefs.GetInt("CurrentScore", 0);
+        PlayerPrefs.SetInt("oldScore", PlayerPrefs.GetInt("CurrentScore"));
         score = GetComponent<Text>();
         highScore = PlayerPrefs.GetInt(highScoreKey, 0);
         HighScoreText.text = highScore.ToString();
         CurrentScore = PlayerPrefs.GetInt("CurrentScore", 0);
-        InvokeRepeating(nameof(AddGold), 1.2f,1);
+        InvokeRepeating(nameof(AddGold),2.5f,1f);
     }
     void Update()
     {

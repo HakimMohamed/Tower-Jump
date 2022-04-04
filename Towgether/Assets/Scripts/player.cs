@@ -77,7 +77,7 @@ public class player : MonoBehaviour
         }
         if (rb.velocity.y >= 150f)
         {
-            rb.gravityScale += Time.deltaTime*33f;
+            rb.gravityScale += Time.deltaTime*88f;
         }
        else if(rb.velocity.y < 20f)
         {
@@ -128,8 +128,8 @@ public class player : MonoBehaviour
 
         HandleBoostUsage();
         timeForPowerUpHandler();
-       
 
+       
     }
    
    
@@ -186,7 +186,7 @@ public class player : MonoBehaviour
         if (isGrounded && timerForPowerUp > 0&&collision.transform.tag=="Ground")
         {
             GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpforce * 1.1f, ForceMode2D.Impulse);
-          
+            
             Dust2.Play();
             SoundManager.PlaySound(SoundManager.Sound.Jump);
         }
