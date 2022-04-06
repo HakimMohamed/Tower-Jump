@@ -157,7 +157,7 @@ public class levelgen : MonoBehaviour
         switch (random_num_to_spawn_ToChoose_jumppad)
         {
             case 1:
-                if (counter_To_Spawn_JumpPad % 2 == 0)
+                if (counter_To_Spawn_JumpPad % 12 == 0)
                 {
                    
                     //instantiate jump pad

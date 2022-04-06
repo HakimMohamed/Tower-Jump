@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using System;
 using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+
+
     //scripts
     player PlayerScript;
     levelgen lvlgenscript;
@@ -13,12 +16,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject GameOverMenu;
     [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject Tilt;
-    [SerializeField] GameObject FirstPlatform;
     [SerializeField] GameObject PauseButtonObject;
     [SerializeField] GameObject BoostBar;
     [SerializeField] GameObject pressAnyWhereToStart;
     [SerializeField] GameObject ScoreText;
     [SerializeField] GameObject Camera;
+    [SerializeField] GameObject WatchAdToContinue;
+    [SerializeField] AdsManager ads;
     //Transform
     Transform positionTORestart;
     Transform Player_transform;
@@ -27,8 +31,16 @@ public class UIManager : MonoBehaviour
    public bool IsGameLost;
     bool IsGameStarted;
     bool Ispaused;
+    bool AfterAdd;
 
-   
+  
+
+    private void Start()
+    {
+        
+        WatchAdToContinue.SetActive(true);
+    }
+
     void Awake()
     {
        
@@ -38,7 +50,6 @@ public class UIManager : MonoBehaviour
         Player_transform = GameObject.Find("Player").transform;
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         lvlgenscript = GameObject.Find("LevelGenerator").GetComponent<levelgen>();
-
         PlayerScript.enabled = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
         GameOverMenu.SetActive(false);
@@ -48,7 +59,8 @@ public class UIManager : MonoBehaviour
         PauseMenu.SetActive(false);
         IsGameStarted = false;
         Ispaused = false;
-
+        AfterAdd = false;
+        IsGameLost = false;
     }
 
     void GameStartedMainCameraEvent()
@@ -56,7 +68,8 @@ public class UIManager : MonoBehaviour
         BoostBar.SetActive(true);
         Tilt.SetActive(true);
         pressAnyWhereToStart.SetActive(true);
-       
+      
+
 
     }
     void Update()
@@ -73,12 +86,48 @@ public class UIManager : MonoBehaviour
         }
         if (Player_transform.transform.position.y < positionTORestart.position.y) 
         {
-             GameLost();
+            IsGameLost = true;
+            GameLost();
         }
         if (Player_transform.transform.position.y>5f)
         {
             ScoreText.SetActive(true);
+            Tilt.SetActive(false);
+
         }
+
+
+        if (AfterAdd)
+        {
+            Player_transform.transform.position = new Vector2(Camera.transform.position.x, Camera.transform.position.y);
+            Debug.Log(AfterAdd);
+             
+            if(Input.anyKey)
+            AfterAdd = false;
+            
+        }
+
+    }
+    public void WatchAddTocontinueButton()
+    {
+        AfterAdd = true;
+        ads.PlayRewardedAd(RewardAfterAd);
+
+    }
+    void RewardAfterAd()
+    {
+      
+            Time.timeScale = 1f;
+            GameOverMenu.SetActive(false);
+            PlayerScript.enabled = true;
+            rb.bodyType = RigidbodyType2D.Dynamic;
+            IsGameLost = false;
+            PauseButtonObject.SetActive(true);
+            BoostBar.SetActive(true);
+       
+            Debug.Log("NUll");
+       
+
     }
     private void GameStarted()
     {
@@ -86,22 +135,22 @@ public class UIManager : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         PauseButtonObject.SetActive(true);
         lvlgenscript.enabled = true;
-        Tilt.SetActive(false);
-        if (!IsGameLost)
-        {
-            FirstPlatform.AddComponent<FirstPlatformJump>();
-        }
+        
     }
+   
     private void GameLost()
     {
-        Time.timeScale = 1f;
-        GameOverMenu.SetActive(true);
-        PlayerScript.enabled = false;
-        rb.bodyType = RigidbodyType2D.Static;
-        IsGameLost = true;
-        PauseButtonObject.SetActive(false);
-        BoostBar.SetActive(false);
-        IsGameLost = true;        
+        if (IsGameLost)
+        {
+            Time.timeScale = 1f;
+            GameOverMenu.SetActive(true);
+            PlayerScript.enabled = false;
+            rb.bodyType = RigidbodyType2D.Static;
+            IsGameLost = true;
+            PauseButtonObject.SetActive(false);
+            BoostBar.SetActive(false);
+        }
+       
     }
 
     public void PauseButton()
@@ -139,4 +188,13 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("StartMenu");
         Time.timeScale = 1f;
     }
+
+
+
+
+   
+
+    
+
+
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class player : MonoBehaviour
 {
-    [SerializeField] ParticleSystem Dust;
-    [SerializeField] ParticleSystem Dust2;
+    [SerializeField]public ParticleSystem Dust;
+    [SerializeField]public ParticleSystem Dust2;
     
     Rigidbody2D rb;
    
@@ -16,24 +16,24 @@ public class player : MonoBehaviour
     [SerializeField] Transform GroundCheckPosition;
     [SerializeField] LayerMask WhatIsGround;
     [SerializeField] float CheckRaidus = 1f;
-    [SerializeField] bool isGrounded;
+    [SerializeField] public bool isGrounded;
 
     [Header("jumping")]
     [SerializeField] float movementSpeed = 16.8f;
     [SerializeField] float movement = 0f;
-    [SerializeField] float jumpforce = 30f;
+    [SerializeField] public float jumpforce = 30f;
     [SerializeField] bool Jumprequest;
    // [SerializeField] float fallmutliplier = 16.4f;
    // [SerializeField] float lowJumpMutliplier = 7.7f;
 
     [Header("PowerUp")]
-    [SerializeField] float timerForPowerUp;
+    [SerializeField]public float timerForPowerUp;
     [SerializeField] float timerForPowerUpMax;
    
 
 
     [Header("Boost")]
-    [SerializeField] float BoostCapacity;
+    [SerializeField] public float BoostCapacity;
     [SerializeField] float BoostCapacityMax;
     [SerializeField] BoostBar boostScript;
     [SerializeField] float BoostCooldown;
@@ -77,7 +77,7 @@ public class player : MonoBehaviour
         }
         if (rb.velocity.y >= 150f)
         {
-            rb.gravityScale += Time.deltaTime*88f;
+            rb.gravityScale += Time.deltaTime*99f;
         }
        else if(rb.velocity.y < 20f)
         {
@@ -183,13 +183,7 @@ public class player : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (isGrounded && timerForPowerUp > 0&&collision.transform.tag=="Ground")
-        {
-            GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpforce * 1.1f, ForceMode2D.Impulse);
-            
-            Dust2.Play();
-            SoundManager.PlaySound(SoundManager.Sound.Jump);
-        }
+       
     }
 
 }

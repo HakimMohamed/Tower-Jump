@@ -6,10 +6,7 @@ public class AnimationController : MonoBehaviour
 {
    
 
-    public void BlueSkin()
-    {
-
-    }
+  
 
 
 

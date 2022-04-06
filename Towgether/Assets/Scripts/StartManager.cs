@@ -12,10 +12,8 @@ public class StartManager : MonoBehaviour
     
 
     [SerializeField] Image ShopMenu;
-    [SerializeField] Image Facebook;
-    [SerializeField] Image Instgram;
-    [SerializeField] Image Reddit;
-    [SerializeField] Image Settings;
+   
+ 
     private void Awake()
     {
         started = false;
@@ -23,7 +21,7 @@ public class StartManager : MonoBehaviour
     public void StartButton()
     {
         started = true;
-        Debug.Log("Pressed");
+    
 
     }
     void Update()
@@ -39,26 +37,14 @@ public class StartManager : MonoBehaviour
     {
 
         DissolveItem startmenu  = new DissolveItem (StartMenu, StartMenu.color, StartMenu.color.a);
-        startmenu.Alphadecrease();
-
-        DissolveItem facebook = new DissolveItem(Facebook, Facebook.color, Facebook.color.a);
-        facebook.Alphadecrease();
-
-        DissolveItem instgram = new DissolveItem(Instgram, Instgram.color, Instgram.color.a);
-        instgram.Alphadecrease();
-
-        DissolveItem reddit = new DissolveItem(Reddit, Reddit.color, Reddit.color.a);
-        reddit.Alphadecrease();
-
-        DissolveItem settings = new DissolveItem(Settings, Settings.color, Settings.color.a);
-        settings.Alphadecrease();
+        startmenu.Alphadecrease();    
 
         DissolveItem shopmenu = new DissolveItem(ShopMenu, ShopMenu.color, ShopMenu.color.a);
         shopmenu.Alphadecrease();
 
        
 
-        if (Settings.color.a <= 0)
+        if (StartMenu.color.a <= 0)
         {
             SceneManager.LoadScene("base");
         }

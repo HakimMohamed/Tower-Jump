@@ -14,18 +14,6 @@ TextureImporter:
   - first:
       213: 21300006
     second: Wizard_3
-  - first:
-      213: 1457491203435894738
-    second: Wizard_0
-  - first:
-      213: -4323298009402118593
-    second: Wizard_1
-  - first:
-      213: -5959617307868019196
-    second: Wizard_2
-  - first:
-      213: 6002840866345723114
-    second: Wizard_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -70,7 +58,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 7
+  spritePixelsToUnits: 10
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -98,42 +86,6 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
-  - serializedVersion: 3
-    buildTarget: iPhone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 1
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
@@ -146,15 +98,15 @@ TextureImporter:
         y: 0
         width: 18
         height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.46655524, y: 0.060200732}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d79d04078c0a3410800000000000000
-      internalID: 1457491203435894738
+      spriteID: c5c9d8606d446c7419725a46a8dd394b
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -167,15 +119,15 @@ TextureImporter:
         y: 0
         width: 17
         height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.49409798, y: 0.0516875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3eee63cd5f8004c0800000000000000
-      internalID: -4323298009402118593
+      spriteID: e8a2d0472e6fa5c47a5ce2f3e453cb55
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -188,15 +140,15 @@ TextureImporter:
         y: 0
         width: 18
         height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.5891864, y: 0.06354521}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 406c14742af2b4da0800000000000000
-      internalID: -5959617307868019196
+      spriteID: 7b930044373c0014f9ed0d913717c312
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -209,15 +161,15 @@ TextureImporter:
         y: 0
         width: 18
         height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: 0.3885176, y: 0.06354521}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae42cb9a6ff5e4350800000000000000
-      internalID: 6002840866345723114
+      spriteID: 33b8042e4cbfb784c899813a9cb9d263
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []

@@ -4,34 +4,31 @@ using UnityEngine;
 
 public class FirstPlatformJump : MonoBehaviour
 {
+    bool GameStarted;
     float Jumpforce = 64f;
     GameObject player;
-    private static FirstPlatformJump instance;
+    player playerscript;
     private void Awake()
     {
+        GameStarted = false;
         player = GameObject.Find("Player");
-      
+        playerscript = player.GetComponent<player>();
     }
-    private void Start()
-    {
-        
-    }
+
     private void Update()
     {
-        if (instance == null)
+        if (Input.anyKey)
         {
-            instance = this;
-
-        }
-        else
-        {
-            DestroyImmediate(gameObject.GetComponent<FirstPlatformJump>());
+            GameStarted=true;   
         }
     }
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.relativeVelocity.y <= 0f && collision.transform.tag == "Player")
+        
+         if (collision.relativeVelocity.y <= 0f && collision.transform.tag == "Player"&&GameStarted)
         {
             Rigidbody2D rb = collision.collider.GetComponent<Rigidbody2D>();
             if (rb != null)
@@ -39,11 +36,13 @@ public class FirstPlatformJump : MonoBehaviour
                 Vector2 velocity = rb.velocity;
                 velocity.y = Jumpforce;
                 rb.velocity = velocity;
-                Destroy(gameObject, 20f);
+
+                SoundManager.PlaySound(SoundManager.Sound.Jump);
             }
 
 
         }
+
     }
-    
+
 }

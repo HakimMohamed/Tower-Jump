@@ -7,12 +7,13 @@ public class ShopManager : MonoBehaviour
     [SerializeField] GameObject MainMenu;
     [SerializeField] GameObject SkinsSection;
     [SerializeField] GameObject SelectedSkin;
-   
+ 
     void Awake()
     {
         MainMenu.SetActive(true);
         SkinsSection.SetActive(false);
         SelectedSkin.SetActive(false);
+       
     }
 
     void Update()
@@ -20,20 +21,27 @@ public class ShopManager : MonoBehaviour
         
     }
 
-
-   public void ShopButtonPressed()
+    public void SettingsButton()
+    {
+        MainMenu.SetActive(false);
+        SkinsSection.SetActive(false);
+        SelectedSkin.SetActive(false);
+       
+    }
+    public void ShopButtonPressed()
     {
         MainMenu.SetActive(false);
         SkinsSection.SetActive(true);
         SelectedSkin.SetActive(true);
+        
+
     }
 
     public void BackButtonPressed()
     {
-
         MainMenu.SetActive(true);
         SkinsSection.SetActive(false);
         SelectedSkin.SetActive(false);
-
+        
     }
 }
