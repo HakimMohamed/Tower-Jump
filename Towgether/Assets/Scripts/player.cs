@@ -173,7 +173,7 @@ public class player : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Arrow"))
         {
-            Debug.Log("player");
+           
 
             timerForPowerUp += timerForPowerUpMax;
 

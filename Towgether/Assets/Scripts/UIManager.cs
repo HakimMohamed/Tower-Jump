@@ -23,6 +23,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject Camera;
     [SerializeField] GameObject WatchAdToContinue;
     [SerializeField] AdsManager ads;
+    [SerializeField] camera cam;
+    [SerializeField] levelgen lvlgen;
+    [SerializeField] GameObject ContinueButton;
     //Transform
     Transform positionTORestart;
     Transform Player_transform;
@@ -32,19 +35,18 @@ public class UIManager : MonoBehaviour
     bool IsGameStarted;
     bool Ispaused;
     bool AfterAdd;
+    bool ResumeButtonPressed;
+    bool WatchedAdOnce;
+    float timer = 25f;
 
-  
 
-    private void Start()
-    {
-        
-        WatchAdToContinue.SetActive(true);
-    }
 
     void Awake()
     {
-       
+
         //Refrences
+        WatchAdToContinue.SetActive(true);
+        ResumeButtonPressed = false;
         PlayerScript = GameObject.Find("Player").GetComponent<player>();
         positionTORestart = GameObject.Find("PositionToRestart").transform;
         Player_transform = GameObject.Find("Player").transform;
@@ -52,6 +54,8 @@ public class UIManager : MonoBehaviour
         lvlgenscript = GameObject.Find("LevelGenerator").GetComponent<levelgen>();
         PlayerScript.enabled = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
+
+        WatchedAdOnce = false;
         GameOverMenu.SetActive(false);
         lvlgenscript.enabled = false;
         pressAnyWhereToStart.SetActive(false);
@@ -61,6 +65,7 @@ public class UIManager : MonoBehaviour
         Ispaused = false;
         AfterAdd = false;
         IsGameLost = false;
+        ContinueButton.SetActive(false);
     }
 
     void GameStartedMainCameraEvent()
@@ -96,27 +101,63 @@ public class UIManager : MonoBehaviour
 
         }
 
+        if (WatchedAdOnce)
+        {
+            WatchAdToContinue.SetActive(false);
+
+        }
 
         if (AfterAdd)
         {
+
+
             Player_transform.transform.position = new Vector2(Camera.transform.position.x, Camera.transform.position.y);
-            Debug.Log(AfterAdd);
-             
-            if(Input.anyKey)
-            AfterAdd = false;
+            lvlgen.enabled = true;
+            ContinueButton.SetActive(true);
+            cam.enabled = false;
+            cam.transform.position += Vector3.up*Time.deltaTime*4f;
+            timer-=Time.deltaTime;
+
+            if (ResumeButtonPressed)
+            {              
+                AfterAdd = false;
+                ContinueButton.SetActive(false);
+                cam.enabled = true;
+            }
+            else if (timer <= 0)
+            {
+                AfterAdd = false;
+                ContinueButton.SetActive(false);
+                cam.enabled = true;
+            }
             
+
         }
 
     }
+    public void ResumeAfterAdd()
+    {
+        ResumeButtonPressed = true;
+    }
     public void WatchAddTocontinueButton()
     {
-        AfterAdd = true;
-        ads.PlayRewardedAd(RewardAfterAd);
+        
+        if (ads != null) { 
+                 
+            ads.PlayRewardedAd(RewardAfterAd);
+            AfterAdd = true;
+            WatchedAdOnce = true;
+        }
+        else
+        {
+            Debug.Log("NUllAds");
+        }
 
     }
     void RewardAfterAd()
     {
-      
+        if (BoostBar != null && GameOverMenu != null && PlayerScript != null && rb != null && PauseButtonObject != null)
+        {
             Time.timeScale = 1f;
             GameOverMenu.SetActive(false);
             PlayerScript.enabled = true;
@@ -124,8 +165,15 @@ public class UIManager : MonoBehaviour
             IsGameLost = false;
             PauseButtonObject.SetActive(true);
             BoostBar.SetActive(true);
-       
+            Debug.Log("NotNUll");
+        }
+        else
+        {
+            
+            
             Debug.Log("NUll");
+
+        }
        
 
     }

@@ -14,13 +14,14 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
 
     private void Start()
     {
-        Advertisement.Initialize(gameId, true);
+        Advertisement.Initialize(gameId, false);
         Advertisement.AddListener(this);
     }
 
     public void PlayRewardedAd(Action onSuccess)
     {
-        OnRewardedAdSuccess=onSuccess;
+        
+        OnRewardedAdSuccess =onSuccess;
         if (Advertisement.IsReady("Rewarded_Android"))
         {
             Advertisement.Show("Rewarded_Android");
@@ -38,17 +39,17 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
 
     public void OnUnityAdsReady(string placementId)
     {
-        // Debug.Log("Ready");
+        Debug.Log("Ready");
     }
 
     public void OnUnityAdsDidError(string message)
     {
-        //Debug.Log("ads error" + message);
+        Debug.Log("ads error" + message);
     }
 
     public void OnUnityAdsDidStart(string placementId)
     {
-        // Debug.Log("video Started");
+         Debug.Log("video Started");
     }
 
 
@@ -56,10 +57,8 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        if (placementId == "Rewarded_Android" && showResult == ShowResult.Finished)
-        {
-           
-            Debug.Log("reward");
+        if (placementId == "Rewarded_Android" && showResult == ShowResult.Finished|| placementId == "Rewarded_iOS" && showResult == ShowResult.Finished)
+        {                 
             OnRewardedAdSuccess.Invoke();
         }
     }
