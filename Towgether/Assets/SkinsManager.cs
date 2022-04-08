@@ -30,8 +30,8 @@ public class SkinsManager : MonoBehaviour
 
     void Awake()
     {
-         //PlayerPrefs.DeleteAll();
-       //PlayerPrefs.SetInt("CurrentScore", 30000);
+       //PlayerPrefs.DeleteAll();
+       //PlayerPrefs.SetInt("CurrentScore", 100000);
         isSkinPurcahsed();       
         selectedSkin = PlayerPrefs.GetInt("selectedSkin", 0);
         PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skins[selectedSkin] as RuntimeAnimatorController;
@@ -296,10 +296,12 @@ public class SkinsManager : MonoBehaviour
         {
             
             selectedSkin -= 1;
+          
             if (selectedSkin < 0)
             {
-                selectedSkin = 0;
+                selectedSkin = 6;
             }
+            
         }
     }
 

@@ -12,8 +12,9 @@ public class StartManager : MonoBehaviour
     
 
     [SerializeField] Image ShopMenu;
-   
- 
+    [SerializeField] Image Settings;
+
+
     private void Awake()
     {
         started = false;
@@ -41,6 +42,9 @@ public class StartManager : MonoBehaviour
 
         DissolveItem shopmenu = new DissolveItem(ShopMenu, ShopMenu.color, ShopMenu.color.a);
         shopmenu.Alphadecrease();
+
+        DissolveItem settings = new DissolveItem(Settings, Settings.color, Settings.color.a);
+        settings.Alphadecrease();
 
        
 

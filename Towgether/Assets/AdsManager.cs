@@ -2,7 +2,7 @@ using UnityEngine.Advertisements;
 using System;
 using UnityEngine;
 
-public class AdsManager : MonoBehaviour,IUnityAdsListener
+public class  AdsManager : MonoBehaviour,IUnityAdsListener
 {
 #if UNITY_IOS
     private string gameId = "4693240";
@@ -10,13 +10,30 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
     private string gameId = "4693241";
 #endif
 
+    [SerializeField] GameObject GameOverMenu;
+
+    public static AdsManager instance { get; private set; }
     Action OnRewardedAdSuccess;
 
-    private void Start()
+    private void Awake()
     {
-        Advertisement.Initialize(gameId, false);
+        DontDestroyOnLoad(this);
+
+        Advertisement.Initialize(gameId, true);
         Advertisement.AddListener(this);
+
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
+
+
 
     public void PlayRewardedAd(Action onSuccess)
     {
@@ -44,7 +61,7 @@ public class AdsManager : MonoBehaviour,IUnityAdsListener
 
     public void OnUnityAdsDidError(string message)
     {
-        Debug.Log("ads error" + message);
+       // GameOverMenu.SetActive(false);
     }
 
     public void OnUnityAdsDidStart(string placementId)

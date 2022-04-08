@@ -40,13 +40,18 @@ public class player : MonoBehaviour
     [SerializeField] float BoostCooldownMax;
     [SerializeField] bool increaseBoost ;
 
+    int Arrows;
+    int Tilt;
+    int direction;
 
 
-   
-   
+
     private void Awake()
     {
-       
+        Arrows = PlayerPrefs.GetInt("Arrows", 0);
+        Tilt = PlayerPrefs.GetInt("Tilt", 0);
+
+        
         rb = GetComponent<Rigidbody2D>();
         sp = GetComponent<SpriteRenderer>();       
         BoostCapacityMax = 1f;
@@ -63,7 +68,7 @@ public class player : MonoBehaviour
    public void HandleBoostUsage()
     {
 
-        if (Input.GetMouseButton(0) && BoostCapacity>0&&!increaseBoost)
+        if (Arrows==1 && Input.touchCount==2&&Tilt != 1 && BoostCapacity>0&&!increaseBoost|| Tilt==1&&Input.GetMouseButton(0) && BoostCapacity > 0 && !increaseBoost&&Arrows!=1)
         {
             rb.gravityScale = 1f;
             BoostCapacity -= Time.deltaTime;
@@ -75,6 +80,14 @@ public class player : MonoBehaviour
                 rb.gravityScale = 14f;
             }
         }
+        else
+        {
+            
+             rb.gravityScale = 14f;
+             Dust.Stop();
+            
+        }
+
         if (rb.velocity.y >= 150f)
         {
             rb.gravityScale += Time.deltaTime*99f;
@@ -83,11 +96,7 @@ public class player : MonoBehaviour
         {
             rb.gravityScale = 14f;
         }
-        if (Input.GetMouseButtonUp(0))
-        {
-            rb.gravityScale = 14f;
-            Dust.Stop();
-        }
+        
         if (BoostCapacity < 1f)
         {
             BoostCooldown -= Time.deltaTime;
@@ -111,17 +120,49 @@ public class player : MonoBehaviour
     }
 
 
+    public void LeftArrow()
+    {
+        Vector3 v = rb.velocity;
+        v.x = Vector2.left.x*33f;
+        rb.velocity = v;
+
+
+        flip(true);
+    }
+    public void RightArrow()
+    {
+        Vector3 v = rb.velocity;
+        v.x = Vector2.right.x * 33f;
+        rb.velocity = v;
+        flip(false);
+    }
+    public void StopMoving()
+    {
+
+        rb.velocity = new Vector2(0.001f,rb.velocity.y);
+    }
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(GroundCheckPosition.position, CheckRaidus, WhatIsGround);
-        
-
-        movement = Input.acceleration.x* movementSpeed;
-        //movement = Input.GetAxisRaw("Horizontal")*movementSpeed;
-        Handlingflip();
 
        
-        rb.velocity = new Vector2( movement, rb.velocity.y);
+        if (Tilt == 1)
+        {
+            movement = Input.acceleration.x * movementSpeed;
+            rb.velocity = new Vector2(movement, rb.velocity.y);
+            Handlingflip();
+        }
+
+        
+
+       
+   
+       
+
+        //movement = Input.GetAxisRaw("Horizontal")*movementSpeed;
+        
+
+       
 
 
 

@@ -16,13 +16,13 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject GameOverMenu;
     [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject Tilt;
+    [SerializeField] GameObject Arrowsobject;
     [SerializeField] GameObject PauseButtonObject;
     [SerializeField] GameObject BoostBar;
     [SerializeField] GameObject pressAnyWhereToStart;
     [SerializeField] GameObject ScoreText;
     [SerializeField] GameObject Camera;
     [SerializeField] GameObject WatchAdToContinue;
-    [SerializeField] AdsManager ads;
     [SerializeField] camera cam;
     [SerializeField] levelgen lvlgen;
     [SerializeField] GameObject ContinueButton;
@@ -40,10 +40,14 @@ public class UIManager : MonoBehaviour
     float timer = 25f;
 
 
+    int Arrows;
+    int Tiltbool;
 
     void Awake()
     {
-
+        Arrows = PlayerPrefs.GetInt("Arrows", 0);
+        Tiltbool = PlayerPrefs.GetInt("Tilt", 0);
+      
         //Refrences
         WatchAdToContinue.SetActive(true);
         ResumeButtonPressed = false;
@@ -66,12 +70,32 @@ public class UIManager : MonoBehaviour
         AfterAdd = false;
         IsGameLost = false;
         ContinueButton.SetActive(false);
+
+        if (Arrows == 1)
+        {
+            Tilt.SetActive(false);
+            Arrowsobject.SetActive(true);
+        }
+        if (Tiltbool == 1)
+        {
+            Tilt.SetActive(true);
+            Arrowsobject.SetActive(false);
+        }
     }
 
     void GameStartedMainCameraEvent()
     {
         BoostBar.SetActive(true);
-        Tilt.SetActive(true);
+        if (Arrows == 1)
+        {
+            Tilt.SetActive(false);
+            Arrowsobject.SetActive(true);
+        }
+        if (Tiltbool == 1)
+        {
+            Tilt.SetActive(true);
+            Arrowsobject.SetActive(false);
+        }
         pressAnyWhereToStart.SetActive(true);
       
 
@@ -117,20 +141,26 @@ public class UIManager : MonoBehaviour
             cam.enabled = false;
             cam.transform.position += Vector3.up*Time.deltaTime*4f;
             timer-=Time.deltaTime;
+            PauseButtonObject.SetActive(false);
 
             if (ResumeButtonPressed)
             {              
                 AfterAdd = false;
                 ContinueButton.SetActive(false);
                 cam.enabled = true;
+                PauseButtonObject.SetActive(true);
+
             }
             else if (timer <= 0)
             {
                 AfterAdd = false;
                 ContinueButton.SetActive(false);
                 cam.enabled = true;
+                PauseButtonObject.SetActive(true);
+
+
             }
-            
+
 
         }
 
@@ -141,17 +171,13 @@ public class UIManager : MonoBehaviour
     }
     public void WatchAddTocontinueButton()
     {
-        
-        if (ads != null) { 
+       
                  
-            ads.PlayRewardedAd(RewardAfterAd);
-            AfterAdd = true;
-            WatchedAdOnce = true;
-        }
-        else
-        {
-            Debug.Log("NUllAds");
-        }
+           AdsManager.instance.PlayRewardedAd(RewardAfterAd);
+           AfterAdd = true;
+           WatchedAdOnce = true;
+       
+        
 
     }
     void RewardAfterAd()
@@ -169,8 +195,6 @@ public class UIManager : MonoBehaviour
         }
         else
         {
-            
-            
             Debug.Log("NUll");
 
         }
@@ -179,17 +203,34 @@ public class UIManager : MonoBehaviour
     }
     private void GameStarted()
     {
-        Time.timeScale = 1f;
+        if (!IsGameLost)
+        {
+            Time.timeScale = 1f;
         rb.bodyType = RigidbodyType2D.Dynamic;
         PauseButtonObject.SetActive(true);
         lvlgenscript.enabled = true;
-        
+        if (Arrows == 1)
+        {
+            Tilt.SetActive(false);
+            Arrowsobject.SetActive(true);
+
+        }
+        if (Tiltbool == 1)
+        {
+            Tilt.SetActive(true);
+            Arrowsobject.SetActive(false);
+
+        }
+
+         }
     }
    
     private void GameLost()
     {
         if (IsGameLost)
         {
+            IsGameStarted = false;
+
             Time.timeScale = 1f;
             GameOverMenu.SetActive(true);
             PlayerScript.enabled = false;
@@ -197,6 +238,18 @@ public class UIManager : MonoBehaviour
             IsGameLost = true;
             PauseButtonObject.SetActive(false);
             BoostBar.SetActive(false);
+            if (Arrows == 1)
+            {
+                Tilt.SetActive(false);
+                Arrowsobject.SetActive(false);
+
+            }
+            if (Tiltbool == 1)
+            {
+                Tilt.SetActive(false);
+                Arrowsobject.SetActive(false);
+
+            }
         }
        
     }
