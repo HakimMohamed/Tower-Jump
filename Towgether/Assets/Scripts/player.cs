@@ -39,21 +39,24 @@ public class player : MonoBehaviour
     [SerializeField] float BoostCooldown;
     [SerializeField] float BoostCooldownMax;
     [SerializeField] bool increaseBoost ;
-
+    [SerializeField] Transform HighestScore;
+    [SerializeField] GameObject NewScoreText;
 
     int Arrows;
     int Tilt;
     int direction;
     bool iSholdingBoostButton;
 
-
+    int hieghstScorePostion;
     private void Awake()
     {
         Arrows = PlayerPrefs.GetInt("Arrows", 0);
         Tilt = PlayerPrefs.GetInt("Tilt", 0);
 
         rb = GetComponent<Rigidbody2D>();
-        sp = GetComponent<SpriteRenderer>();       
+        sp = GetComponent<SpriteRenderer>();
+
+        NewScoreText.SetActive(false);
         BoostCapacityMax = 1f;
         BoostCapacity= 0f;
         BoostCooldownMax = 5f;
@@ -63,6 +66,10 @@ public class player : MonoBehaviour
         timerForPowerUpMax = 5f;
         SoundManager.initialize();
         boostScript.setboost(0f);
+        hieghstScorePostion = PlayerPrefs.GetInt("HighScore",0);
+        Instantiate(HighestScore, new Vector2(0, hieghstScorePostion), Quaternion.identity);
+       
+        
     }
 
    public void HandleBoostUsage()
@@ -223,7 +230,7 @@ public class player : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(GroundCheckPosition.position, CheckRaidus, WhatIsGround);
 
-       
+      
         if (Tilt == 1)
         {
             movement = Input.acceleration.x * movementSpeed;
@@ -232,18 +239,14 @@ public class player : MonoBehaviour
         }
 
 
-       
+        if (transform.position.y > hieghstScorePostion)
+        {
+            // new Score
+            NewScoreText.SetActive(true);
 
-
-
+        }
 
         //movement = Input.GetAxisRaw("Horizontal")*movementSpeed;
-
-
-
-
-
-
 
         HandleBoostUsage();
         timeForPowerUpHandler();
