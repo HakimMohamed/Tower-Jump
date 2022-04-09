@@ -102,7 +102,7 @@ PlatformEffector2D:
   m_RotationalOffset: 0
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 210
+  m_SurfaceArc: 142.3
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1

@@ -8,6 +8,8 @@ public class Score : MonoBehaviour
     [SerializeField] Transform player;
     [SerializeField] Text HighScoreText;
     [SerializeField] UIManager manager;
+    [SerializeField] Text YournewHighesetScoreText;
+    [SerializeField] Text GameoverToNewHighScore;
     Text score;
     int highScore;
     int scorenum;
@@ -16,6 +18,11 @@ public class Score : MonoBehaviour
     int oldScore;
 
     int CurrentScore;
+    bool newHighscore;
+
+
+    float timer;
+    float timermax;
     void AddScore()
     {
         scorenum++;
@@ -29,6 +36,7 @@ public class Score : MonoBehaviour
     }
     private void Awake()
     {
+        //PlayerPrefs.DeleteAll();
         oldScore = PlayerPrefs.GetInt("CurrentScore", 0);
         PlayerPrefs.SetInt("oldScore", PlayerPrefs.GetInt("CurrentScore"));
         score = GetComponent<Text>();
@@ -36,6 +44,9 @@ public class Score : MonoBehaviour
         HighScoreText.text = highScore.ToString();
         CurrentScore = PlayerPrefs.GetInt("CurrentScore", 0);
         InvokeRepeating(nameof(AddGold),2.5f,1f);
+        newHighscore = false;
+        timer = 0.5f;
+        timermax = 0.5f;
     }
     void Update()
     {
@@ -52,11 +63,22 @@ public class Score : MonoBehaviour
 
         if (scorenum > highScore)
         {
-
+            newHighscore = true;
             PlayerPrefs.SetInt(highScoreKey, scorenum);
             PlayerPrefs.Save();
             HighScoreText.text = scorenum.ToString();
-            
+            GameoverToNewHighScore.text = "new HighScore";
+            GameoverToNewHighScore.color = Color.white;
+
+        }
+        if (newHighscore)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0)
+            {
+                YournewHighesetScoreText.color = new Color(Random.Range(0, 255), Random.Range(0, 255), Random.Range(0, 255));
+                timer += timermax;
+            }
         }
         if (Input.GetKeyDown(KeyCode.V))
         {

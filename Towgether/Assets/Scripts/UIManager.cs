@@ -265,10 +265,13 @@ public class UIManager : MonoBehaviour
             PauseMenu.SetActive(true);
             PauseButtonObject.SetActive(false);
             Debug.Log("Paused");
+            Arrowsobject.SetActive(false);
+
         }
     }
     public void ResumeButton()
     {
+        Arrowsobject.SetActive(true);
         Camera.GetComponent<camera>().enabled = true;
         Time.timeScale = 1f;
         PlayerScript.enabled = true;

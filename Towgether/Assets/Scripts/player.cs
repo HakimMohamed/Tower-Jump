@@ -40,10 +40,11 @@ public class player : MonoBehaviour
     [SerializeField] float BoostCooldownMax;
     [SerializeField] bool increaseBoost ;
 
+
     int Arrows;
     int Tilt;
     int direction;
-
+    bool iSholdingBoostButton;
 
 
     private void Awake()
@@ -51,7 +52,6 @@ public class player : MonoBehaviour
         Arrows = PlayerPrefs.GetInt("Arrows", 0);
         Tilt = PlayerPrefs.GetInt("Tilt", 0);
 
-        
         rb = GetComponent<Rigidbody2D>();
         sp = GetComponent<SpriteRenderer>();       
         BoostCapacityMax = 1f;
@@ -67,8 +67,8 @@ public class player : MonoBehaviour
 
    public void HandleBoostUsage()
     {
-
-        if (Arrows==1 && Input.touchCount==2&&Tilt != 1 && BoostCapacity>0&&!increaseBoost|| Tilt==1&&Input.GetMouseButton(0) && BoostCapacity > 0 && !increaseBoost&&Arrows!=1)
+    
+        if (Arrows == 1 && Input.touchCount == 2 && Tilt != 1 && BoostCapacity > 0 && !increaseBoost || Tilt == 1&&Input.GetMouseButton(0) && BoostCapacity > 0 && !increaseBoost&&Arrows!=1)
         {
             rb.gravityScale = 1f;
             BoostCapacity -= Time.deltaTime;
@@ -76,23 +76,22 @@ public class player : MonoBehaviour
             Dust.Play();
             if (BoostCapacity <= 0)
             {
-                Dust.Stop();
+               Dust.Stop();
                 rb.gravityScale = 14f;
-            }
+           }
         }
         else
-        {
-            
+        {           
              rb.gravityScale = 14f;
-             Dust.Stop();
-            
+           Dust.Stop();
+
         }
 
         if (rb.velocity.y >= 150f)
         {
-            rb.gravityScale += Time.deltaTime*99f;
+            rb.gravityScale += Time.deltaTime * 4444f;
         }
-       else if(rb.velocity.y < 20f)
+        else if (rb.velocity.y < 20f)
         {
             rb.gravityScale = 14f;
         }
@@ -120,26 +119,105 @@ public class player : MonoBehaviour
     }
 
 
+   
+     void BoostButton()
+    {
+        if (Arrows == 1 && Input.touchCount == 0 && Tilt != 1 && BoostCapacity > 0 && !increaseBoost)
+        {
+            rb.gravityScale = 1f;
+            BoostCapacity -= Time.deltaTime;
+            rb.AddForce(170f * Time.deltaTime * Vector2.up, ForceMode2D.Impulse);
+            Dust.Play();
+            if (BoostCapacity <= 0)
+            {
+                Dust.Stop();
+                rb.gravityScale = 14f;
+            }
+        }
+        else
+        {
+            rb.gravityScale = 14f;
+            Dust.Stop();
+
+        }
+
+        if (rb.velocity.y >= 150f)
+        {
+            rb.gravityScale += Time.deltaTime * 4444f;
+        }
+        else if (rb.velocity.y < 20f)
+        {
+            rb.gravityScale = 14f;
+        }
+
+        if (BoostCapacity < 1f)
+        {
+            BoostCooldown -= Time.deltaTime;
+            if (BoostCooldown <= 0f)
+            {
+                BoostCooldown += BoostCooldownMax;
+                increaseBoost = true;
+            }
+        }
+        if (increaseBoost)
+        {
+            if (BoostCapacity < BoostCapacityMax)
+                BoostCapacity += Time.deltaTime;
+            else if (BoostCapacity >= BoostCapacityMax)
+            {
+                increaseBoost = false;
+            }
+        }
+
+        boostScript.setboost(BoostCapacity);
+    }
+    
     public void LeftArrow()
     {
         Vector3 v = rb.velocity;
-        v.x = Vector2.left.x*33f;
+        v.x = Vector2.left.x*20f;
         rb.velocity = v;
+        if (Input.touchCount == 2)
+        {
 
+            Vector3 v1 = rb.velocity;
+            v1.x = Vector2.right.x;
+            rb.velocity = v1;
+            BoostButton();
+        }
 
         flip(true);
     }
     public void RightArrow()
     {
         Vector3 v = rb.velocity;
-        v.x = Vector2.right.x * 33f;
+        v.x = Vector2.right.x * 20f;
         rb.velocity = v;
+        if (Input.touchCount == 2)
+        {
+
+
+            Vector3 v1 = rb.velocity;
+            v1.x = Vector2.left.x;
+            rb.velocity = v1;
+
+            BoostButton();
+
+        }
+
         flip(false);
     }
-    public void StopMoving()
+
+   
+    public void StopMovingForLeftArrow()
     {
 
-        rb.velocity = new Vector2(0.001f,rb.velocity.y);
+        rb.velocity = new Vector2(-0.01f,rb.velocity.y);
+    }
+    public void StopMovingForRightArrow()
+    {
+
+        rb.velocity = new Vector2(0.01f, rb.velocity.y);
     }
     void Update()
     {
@@ -153,16 +231,16 @@ public class player : MonoBehaviour
             Handlingflip();
         }
 
-        
 
        
-   
-       
+
+
+
 
         //movement = Input.GetAxisRaw("Horizontal")*movementSpeed;
-        
 
-       
+
+
 
 
 

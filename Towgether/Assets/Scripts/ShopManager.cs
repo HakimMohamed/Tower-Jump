@@ -29,16 +29,17 @@ public class ShopManager : MonoBehaviour
 
 
         ArrowToggleBool = PlayerPrefs.GetInt("Arrows", 0);
-        if(ArrowToggleBool == 1)
-        ArrowToggle.isOn = intToBool(ArrowToggleBool);
+        if (ArrowToggleBool == 1)
+            ArrowToggle.isOn = intToBool(ArrowToggleBool);
 
 
         BoolTiltYourPhoneToggle = PlayerPrefs.GetInt("Tilt", 0);
-        if(BoolTiltYourPhoneToggle == 1)
-        TiltYourPhoneToggle.isOn = intToBool(BoolTiltYourPhoneToggle);
+        if (BoolTiltYourPhoneToggle == 1)
+            TiltYourPhoneToggle.isOn = intToBool(BoolTiltYourPhoneToggle);
 
 
     }
+   
 
     void Update()
     {
