@@ -122,7 +122,7 @@ public class player : MonoBehaviour
    
      void BoostButton()
     {
-        if (Arrows == 1 && Input.touchCount == 0 && Tilt != 1 && BoostCapacity > 0 && !increaseBoost)
+        if (Arrows == 1 && Tilt != 1 && BoostCapacity > 0 && !increaseBoost)
         {
             rb.gravityScale = 1f;
             BoostCapacity -= Time.deltaTime;
@@ -177,15 +177,16 @@ public class player : MonoBehaviour
         Vector3 v = rb.velocity;
         v.x = Vector2.left.x*20f;
         rb.velocity = v;
-        if (Input.touchCount == 2)
+        if ( Input.touchCount == 3 || Input.touchCount == 2&&Arrows == 1 && Tilt != 1 && BoostCapacity > 0 && !increaseBoost)
         {
-
+            BoostButton();
+          
             Vector3 v1 = rb.velocity;
             v1.x = Vector2.right.x;
             rb.velocity = v1;
-            BoostButton();
-        }
 
+            
+        }
         flip(true);
     }
     public void RightArrow()
@@ -193,18 +194,17 @@ public class player : MonoBehaviour
         Vector3 v = rb.velocity;
         v.x = Vector2.right.x * 20f;
         rb.velocity = v;
-        if (Input.touchCount == 2)
+        if (Input.touchCount == 3 || Input.touchCount == 2&&Arrows == 1 && Tilt != 1 && BoostCapacity > 0 && !increaseBoost)
         {
 
-
+            BoostButton();
             Vector3 v1 = rb.velocity;
             v1.x = Vector2.left.x;
             rb.velocity = v1;
 
-            BoostButton();
+           
 
         }
-
         flip(false);
     }
 
