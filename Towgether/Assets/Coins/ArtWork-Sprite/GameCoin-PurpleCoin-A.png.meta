@@ -213,6 +213,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1636,6 +1637,70 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GameCoin-PurpleCoin-A_26: 21300052
+      GameCoin-PurpleCoin-A_3: 21300006
+      GameCoin-PurpleCoin-A_23: 21300046
+      GameCoin-PurpleCoin-A_8: 21300016
+      GameCoin-PurpleCoin-A_54: 21300108
+      GameCoin-PurpleCoin-A_25: 21300050
+      GameCoin-PurpleCoin-A_55: 21300110
+      GameCoin-PurpleCoin-A_62: 21300124
+      GameCoin-PurpleCoin-A_15: 21300030
+      GameCoin-PurpleCoin-A_46: 21300092
+      GameCoin-PurpleCoin-A_12: 21300024
+      GameCoin-PurpleCoin-A_22: 21300044
+      GameCoin-PurpleCoin-A_30: 21300060
+      GameCoin-PurpleCoin-A_17: 21300034
+      GameCoin-PurpleCoin-A_2: 21300004
+      GameCoin-PurpleCoin-A_32: 21300064
+      GameCoin-PurpleCoin-A_43: 21300086
+      GameCoin-PurpleCoin-A_41: 21300082
+      GameCoin-PurpleCoin-A_60: 21300120
+      GameCoin-PurpleCoin-A_29: 21300058
+      GameCoin-PurpleCoin-A_57: 21300114
+      GameCoin-PurpleCoin-A_20: 21300040
+      GameCoin-PurpleCoin-A_27: 21300054
+      GameCoin-PurpleCoin-A_0: 21300000
+      GameCoin-PurpleCoin-A_47: 21300094
+      GameCoin-PurpleCoin-A_53: 21300106
+      GameCoin-PurpleCoin-A_11: 21300022
+      GameCoin-PurpleCoin-A_9: 21300018
+      GameCoin-PurpleCoin-A_38: 21300076
+      GameCoin-PurpleCoin-A_1: 21300002
+      GameCoin-PurpleCoin-A_40: 21300080
+      GameCoin-PurpleCoin-A_28: 21300056
+      GameCoin-PurpleCoin-A_14: 21300028
+      GameCoin-PurpleCoin-A_4: 21300008
+      GameCoin-PurpleCoin-A_10: 21300020
+      GameCoin-PurpleCoin-A_36: 21300072
+      GameCoin-PurpleCoin-A_58: 21300116
+      GameCoin-PurpleCoin-A_13: 21300026
+      GameCoin-PurpleCoin-A_49: 21300098
+      GameCoin-PurpleCoin-A_56: 21300112
+      GameCoin-PurpleCoin-A_16: 21300032
+      GameCoin-PurpleCoin-A_19: 21300038
+      GameCoin-PurpleCoin-A_6: 21300012
+      GameCoin-PurpleCoin-A_42: 21300084
+      GameCoin-PurpleCoin-A_44: 21300088
+      GameCoin-PurpleCoin-A_24: 21300048
+      GameCoin-PurpleCoin-A_31: 21300062
+      GameCoin-PurpleCoin-A_50: 21300100
+      GameCoin-PurpleCoin-A_18: 21300036
+      GameCoin-PurpleCoin-A_34: 21300068
+      GameCoin-PurpleCoin-A_7: 21300014
+      GameCoin-PurpleCoin-A_39: 21300078
+      GameCoin-PurpleCoin-A_52: 21300104
+      GameCoin-PurpleCoin-A_45: 21300090
+      GameCoin-PurpleCoin-A_35: 21300070
+      GameCoin-PurpleCoin-A_5: 21300010
+      GameCoin-PurpleCoin-A_51: 21300102
+      GameCoin-PurpleCoin-A_48: 21300096
+      GameCoin-PurpleCoin-A_21: 21300042
+      GameCoin-PurpleCoin-A_61: 21300122
+      GameCoin-PurpleCoin-A_59: 21300118
+      GameCoin-PurpleCoin-A_33: 21300066
+      GameCoin-PurpleCoin-A_37: 21300074
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

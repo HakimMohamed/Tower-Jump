@@ -216,6 +216,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1660,6 +1661,71 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GameCoin-Silver-B_33: 21300066
+      GameCoin-Silver-B_1: 21300002
+      GameCoin-Silver-B_21: 21300042
+      GameCoin-Silver-B_29: 21300058
+      GameCoin-Silver-B_11: 21300022
+      GameCoin-Silver-B_51: 21300102
+      GameCoin-Silver-B_19: 21300038
+      GameCoin-Silver-B_22: 21300044
+      GameCoin-Silver-B_52: 21300104
+      GameCoin-Silver-B_63: 21300126
+      GameCoin-Silver-B_8: 21300016
+      GameCoin-Silver-B_14: 21300028
+      GameCoin-Silver-B_53: 21300106
+      GameCoin-Silver-B_10: 21300020
+      GameCoin-Silver-B_60: 21300120
+      GameCoin-Silver-B_7: 21300014
+      GameCoin-Silver-B_25: 21300050
+      GameCoin-Silver-B_30: 21300060
+      GameCoin-Silver-B_47: 21300094
+      GameCoin-Silver-B_26: 21300052
+      GameCoin-Silver-B_3: 21300006
+      GameCoin-Silver-B_50: 21300100
+      GameCoin-Silver-B_46: 21300092
+      GameCoin-Silver-B_40: 21300080
+      GameCoin-Silver-B_41: 21300082
+      GameCoin-Silver-B_24: 21300048
+      GameCoin-Silver-B_28: 21300056
+      GameCoin-Silver-B_45: 21300090
+      GameCoin-Silver-B_0: 21300000
+      GameCoin-Silver-B_49: 21300098
+      GameCoin-Silver-B_54: 21300108
+      GameCoin-Silver-B_55: 21300110
+      GameCoin-Silver-B_17: 21300034
+      GameCoin-Silver-B_61: 21300122
+      GameCoin-Silver-B_44: 21300088
+      GameCoin-Silver-B_42: 21300084
+      GameCoin-Silver-B_59: 21300118
+      GameCoin-Silver-B_62: 21300124
+      GameCoin-Silver-B_56: 21300112
+      GameCoin-Silver-B_37: 21300074
+      GameCoin-Silver-B_13: 21300026
+      GameCoin-Silver-B_23: 21300046
+      GameCoin-Silver-B_20: 21300040
+      GameCoin-Silver-B_31: 21300062
+      GameCoin-Silver-B_58: 21300116
+      GameCoin-Silver-B_4: 21300008
+      GameCoin-Silver-B_32: 21300064
+      GameCoin-Silver-B_2: 21300004
+      GameCoin-Silver-B_12: 21300024
+      GameCoin-Silver-B_48: 21300096
+      GameCoin-Silver-B_18: 21300036
+      GameCoin-Silver-B_16: 21300032
+      GameCoin-Silver-B_35: 21300070
+      GameCoin-Silver-B_34: 21300068
+      GameCoin-Silver-B_57: 21300114
+      GameCoin-Silver-B_9: 21300018
+      GameCoin-Silver-B_43: 21300086
+      GameCoin-Silver-B_5: 21300010
+      GameCoin-Silver-B_27: 21300054
+      GameCoin-Silver-B_39: 21300078
+      GameCoin-Silver-B_6: 21300012
+      GameCoin-Silver-B_15: 21300030
+      GameCoin-Silver-B_36: 21300072
+      GameCoin-Silver-B_38: 21300076
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

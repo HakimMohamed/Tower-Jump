@@ -78,6 +78,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -556,6 +557,25 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GameCoin-Silver-D_10: 21300020
+      GameCoin-Silver-D_16: 21300032
+      GameCoin-Silver-D_5: 21300010
+      GameCoin-Silver-D_2: 21300004
+      GameCoin-Silver-D_0: 21300000
+      GameCoin-Silver-D_3: 21300006
+      GameCoin-Silver-D_13: 21300026
+      GameCoin-Silver-D_11: 21300022
+      GameCoin-Silver-D_1: 21300002
+      GameCoin-Silver-D_8: 21300016
+      GameCoin-Silver-D_14: 21300028
+      GameCoin-Silver-D_7: 21300014
+      GameCoin-Silver-D_15: 21300030
+      GameCoin-Silver-D_9: 21300018
+      GameCoin-Silver-D_12: 21300024
+      GameCoin-Silver-D_4: 21300008
+      GameCoin-Silver-D_17: 21300034
+      GameCoin-Silver-D_6: 21300012
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

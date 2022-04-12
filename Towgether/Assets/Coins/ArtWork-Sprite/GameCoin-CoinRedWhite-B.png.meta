@@ -210,6 +210,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1612,6 +1613,69 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GameCoin-CoinRedWhite-B_4: 21300008
+      GameCoin-CoinRedWhite-B_25: 21300050
+      GameCoin-CoinRedWhite-B_15: 21300030
+      GameCoin-CoinRedWhite-B_36: 21300072
+      GameCoin-CoinRedWhite-B_27: 21300054
+      GameCoin-CoinRedWhite-B_59: 21300118
+      GameCoin-CoinRedWhite-B_32: 21300064
+      GameCoin-CoinRedWhite-B_18: 21300036
+      GameCoin-CoinRedWhite-B_5: 21300010
+      GameCoin-CoinRedWhite-B_30: 21300060
+      GameCoin-CoinRedWhite-B_48: 21300096
+      GameCoin-CoinRedWhite-B_53: 21300106
+      GameCoin-CoinRedWhite-B_6: 21300012
+      GameCoin-CoinRedWhite-B_1: 21300002
+      GameCoin-CoinRedWhite-B_40: 21300080
+      GameCoin-CoinRedWhite-B_0: 21300000
+      GameCoin-CoinRedWhite-B_20: 21300040
+      GameCoin-CoinRedWhite-B_45: 21300090
+      GameCoin-CoinRedWhite-B_3: 21300006
+      GameCoin-CoinRedWhite-B_8: 21300016
+      GameCoin-CoinRedWhite-B_19: 21300038
+      GameCoin-CoinRedWhite-B_35: 21300070
+      GameCoin-CoinRedWhite-B_2: 21300004
+      GameCoin-CoinRedWhite-B_46: 21300092
+      GameCoin-CoinRedWhite-B_12: 21300024
+      GameCoin-CoinRedWhite-B_11: 21300022
+      GameCoin-CoinRedWhite-B_34: 21300068
+      GameCoin-CoinRedWhite-B_22: 21300044
+      GameCoin-CoinRedWhite-B_54: 21300108
+      GameCoin-CoinRedWhite-B_44: 21300088
+      GameCoin-CoinRedWhite-B_7: 21300014
+      GameCoin-CoinRedWhite-B_26: 21300052
+      GameCoin-CoinRedWhite-B_29: 21300058
+      GameCoin-CoinRedWhite-B_10: 21300020
+      GameCoin-CoinRedWhite-B_55: 21300110
+      GameCoin-CoinRedWhite-B_56: 21300112
+      GameCoin-CoinRedWhite-B_21: 21300042
+      GameCoin-CoinRedWhite-B_9: 21300018
+      GameCoin-CoinRedWhite-B_39: 21300078
+      GameCoin-CoinRedWhite-B_57: 21300114
+      GameCoin-CoinRedWhite-B_16: 21300032
+      GameCoin-CoinRedWhite-B_50: 21300100
+      GameCoin-CoinRedWhite-B_43: 21300086
+      GameCoin-CoinRedWhite-B_60: 21300120
+      GameCoin-CoinRedWhite-B_33: 21300066
+      GameCoin-CoinRedWhite-B_28: 21300056
+      GameCoin-CoinRedWhite-B_49: 21300098
+      GameCoin-CoinRedWhite-B_41: 21300082
+      GameCoin-CoinRedWhite-B_31: 21300062
+      GameCoin-CoinRedWhite-B_42: 21300084
+      GameCoin-CoinRedWhite-B_52: 21300104
+      GameCoin-CoinRedWhite-B_24: 21300048
+      GameCoin-CoinRedWhite-B_58: 21300116
+      GameCoin-CoinRedWhite-B_61: 21300122
+      GameCoin-CoinRedWhite-B_14: 21300028
+      GameCoin-CoinRedWhite-B_17: 21300034
+      GameCoin-CoinRedWhite-B_23: 21300046
+      GameCoin-CoinRedWhite-B_47: 21300094
+      GameCoin-CoinRedWhite-B_13: 21300026
+      GameCoin-CoinRedWhite-B_37: 21300074
+      GameCoin-CoinRedWhite-B_38: 21300076
+      GameCoin-CoinRedWhite-B_51: 21300102
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

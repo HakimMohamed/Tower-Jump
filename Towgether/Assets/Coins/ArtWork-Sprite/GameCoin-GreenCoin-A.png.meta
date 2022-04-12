@@ -216,6 +216,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1660,6 +1661,71 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GameCoin-GreenCoin-A_49: 21300098
+      GameCoin-GreenCoin-A_36: 21300072
+      GameCoin-GreenCoin-A_31: 21300062
+      GameCoin-GreenCoin-A_56: 21300112
+      GameCoin-GreenCoin-A_7: 21300014
+      GameCoin-GreenCoin-A_13: 21300026
+      GameCoin-GreenCoin-A_11: 21300022
+      GameCoin-GreenCoin-A_30: 21300060
+      GameCoin-GreenCoin-A_40: 21300080
+      GameCoin-GreenCoin-A_37: 21300074
+      GameCoin-GreenCoin-A_24: 21300048
+      GameCoin-GreenCoin-A_54: 21300108
+      GameCoin-GreenCoin-A_22: 21300044
+      GameCoin-GreenCoin-A_53: 21300106
+      GameCoin-GreenCoin-A_21: 21300042
+      GameCoin-GreenCoin-A_45: 21300090
+      GameCoin-GreenCoin-A_8: 21300016
+      GameCoin-GreenCoin-A_46: 21300092
+      GameCoin-GreenCoin-A_27: 21300054
+      GameCoin-GreenCoin-A_52: 21300104
+      GameCoin-GreenCoin-A_50: 21300100
+      GameCoin-GreenCoin-A_2: 21300004
+      GameCoin-GreenCoin-A_38: 21300076
+      GameCoin-GreenCoin-A_58: 21300116
+      GameCoin-GreenCoin-A_19: 21300038
+      GameCoin-GreenCoin-A_14: 21300028
+      GameCoin-GreenCoin-A_0: 21300000
+      GameCoin-GreenCoin-A_26: 21300052
+      GameCoin-GreenCoin-A_43: 21300086
+      GameCoin-GreenCoin-A_60: 21300120
+      GameCoin-GreenCoin-A_12: 21300024
+      GameCoin-GreenCoin-A_18: 21300036
+      GameCoin-GreenCoin-A_34: 21300068
+      GameCoin-GreenCoin-A_59: 21300118
+      GameCoin-GreenCoin-A_55: 21300110
+      GameCoin-GreenCoin-A_41: 21300082
+      GameCoin-GreenCoin-A_28: 21300056
+      GameCoin-GreenCoin-A_9: 21300018
+      GameCoin-GreenCoin-A_51: 21300102
+      GameCoin-GreenCoin-A_57: 21300114
+      GameCoin-GreenCoin-A_62: 21300124
+      GameCoin-GreenCoin-A_63: 21300126
+      GameCoin-GreenCoin-A_16: 21300032
+      GameCoin-GreenCoin-A_20: 21300040
+      GameCoin-GreenCoin-A_1: 21300002
+      GameCoin-GreenCoin-A_6: 21300012
+      GameCoin-GreenCoin-A_23: 21300046
+      GameCoin-GreenCoin-A_3: 21300006
+      GameCoin-GreenCoin-A_15: 21300030
+      GameCoin-GreenCoin-A_29: 21300058
+      GameCoin-GreenCoin-A_44: 21300088
+      GameCoin-GreenCoin-A_47: 21300094
+      GameCoin-GreenCoin-A_35: 21300070
+      GameCoin-GreenCoin-A_10: 21300020
+      GameCoin-GreenCoin-A_39: 21300078
+      GameCoin-GreenCoin-A_32: 21300064
+      GameCoin-GreenCoin-A_5: 21300010
+      GameCoin-GreenCoin-A_42: 21300084
+      GameCoin-GreenCoin-A_25: 21300050
+      GameCoin-GreenCoin-A_61: 21300122
+      GameCoin-GreenCoin-A_4: 21300008
+      GameCoin-GreenCoin-A_48: 21300096
+      GameCoin-GreenCoin-A_17: 21300034
+      GameCoin-GreenCoin-A_33: 21300066
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

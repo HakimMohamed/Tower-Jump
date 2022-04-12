@@ -150,6 +150,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1132,6 +1133,49 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GameCoin-GoldCoin-C_16: 21300032
+      GameCoin-GoldCoin-C_31: 21300062
+      GameCoin-GoldCoin-C_13: 21300026
+      GameCoin-GoldCoin-C_4: 21300008
+      GameCoin-GoldCoin-C_8: 21300016
+      GameCoin-GoldCoin-C_10: 21300020
+      GameCoin-GoldCoin-C_29: 21300058
+      GameCoin-GoldCoin-C_19: 21300038
+      GameCoin-GoldCoin-C_39: 21300078
+      GameCoin-GoldCoin-C_26: 21300052
+      GameCoin-GoldCoin-C_21: 21300042
+      GameCoin-GoldCoin-C_7: 21300014
+      GameCoin-GoldCoin-C_1: 21300002
+      GameCoin-GoldCoin-C_11: 21300022
+      GameCoin-GoldCoin-C_40: 21300080
+      GameCoin-GoldCoin-C_20: 21300040
+      GameCoin-GoldCoin-C_15: 21300030
+      GameCoin-GoldCoin-C_18: 21300036
+      GameCoin-GoldCoin-C_27: 21300054
+      GameCoin-GoldCoin-C_3: 21300006
+      GameCoin-GoldCoin-C_2: 21300004
+      GameCoin-GoldCoin-C_32: 21300064
+      GameCoin-GoldCoin-C_6: 21300012
+      GameCoin-GoldCoin-C_14: 21300028
+      GameCoin-GoldCoin-C_22: 21300044
+      GameCoin-GoldCoin-C_36: 21300072
+      GameCoin-GoldCoin-C_23: 21300046
+      GameCoin-GoldCoin-C_30: 21300060
+      GameCoin-GoldCoin-C_28: 21300056
+      GameCoin-GoldCoin-C_33: 21300066
+      GameCoin-GoldCoin-C_37: 21300074
+      GameCoin-GoldCoin-C_24: 21300048
+      GameCoin-GoldCoin-C_0: 21300000
+      GameCoin-GoldCoin-C_12: 21300024
+      GameCoin-GoldCoin-C_5: 21300010
+      GameCoin-GoldCoin-C_25: 21300050
+      GameCoin-GoldCoin-C_9: 21300018
+      GameCoin-GoldCoin-C_34: 21300068
+      GameCoin-GoldCoin-C_41: 21300082
+      GameCoin-GoldCoin-C_35: 21300070
+      GameCoin-GoldCoin-C_38: 21300076
+      GameCoin-GoldCoin-C_17: 21300034
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

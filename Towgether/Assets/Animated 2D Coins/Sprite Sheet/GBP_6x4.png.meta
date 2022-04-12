@@ -96,6 +96,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -664,6 +665,31 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GBP_6x4_7: -8442284633675105508
+      GBP_6x4_20: 868123503925801587
+      GBP_6x4_14: -2877352042822793220
+      GBP_6x4_22: -6943521445974772975
+      GBP_6x4_8: -5046947036116340701
+      GBP_6x4_23: 6959363836830139238
+      GBP_6x4_4: -214571474641547742
+      GBP_6x4_17: 2219945470327788286
+      GBP_6x4_9: -7070900780613851990
+      GBP_6x4_1: -8409354516116227959
+      GBP_6x4_0: -7936153736013220652
+      GBP_6x4_5: -1830723025277804877
+      GBP_6x4_12: 7435843953246789999
+      GBP_6x4_18: -6552125822976361093
+      GBP_6x4_6: 4194120311586029468
+      GBP_6x4_15: 7787320068920022456
+      GBP_6x4_16: -5996561807432998038
+      GBP_6x4_3: -4636521403191898339
+      GBP_6x4_11: -148703515696482001
+      GBP_6x4_21: 219482495783355648
+      GBP_6x4_2: 3245101069937900333
+      GBP_6x4_10: -834266433775807901
+      GBP_6x4_19: -3475838954498176568
+      GBP_6x4_13: -4970354071730646101
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

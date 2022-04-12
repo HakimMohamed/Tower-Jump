@@ -213,6 +213,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1636,6 +1637,70 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GameCoin-GoldRedCoin-B_19: 21300038
+      GameCoin-GoldRedCoin-B_23: 21300046
+      GameCoin-GoldRedCoin-B_52: 21300104
+      GameCoin-GoldRedCoin-B_0: 21300000
+      GameCoin-GoldRedCoin-B_56: 21300112
+      GameCoin-GoldRedCoin-B_34: 21300068
+      GameCoin-GoldRedCoin-B_6: 21300012
+      GameCoin-GoldRedCoin-B_8: 21300016
+      GameCoin-GoldRedCoin-B_7: 21300014
+      GameCoin-GoldRedCoin-B_37: 21300074
+      GameCoin-GoldRedCoin-B_16: 21300032
+      GameCoin-GoldRedCoin-B_35: 21300070
+      GameCoin-GoldRedCoin-B_20: 21300040
+      GameCoin-GoldRedCoin-B_40: 21300080
+      GameCoin-GoldRedCoin-B_60: 21300120
+      GameCoin-GoldRedCoin-B_54: 21300108
+      GameCoin-GoldRedCoin-B_51: 21300102
+      GameCoin-GoldRedCoin-B_22: 21300044
+      GameCoin-GoldRedCoin-B_43: 21300086
+      GameCoin-GoldRedCoin-B_28: 21300056
+      GameCoin-GoldRedCoin-B_5: 21300010
+      GameCoin-GoldRedCoin-B_25: 21300050
+      GameCoin-GoldRedCoin-B_36: 21300072
+      GameCoin-GoldRedCoin-B_2: 21300004
+      GameCoin-GoldRedCoin-B_4: 21300008
+      GameCoin-GoldRedCoin-B_15: 21300030
+      GameCoin-GoldRedCoin-B_42: 21300084
+      GameCoin-GoldRedCoin-B_59: 21300118
+      GameCoin-GoldRedCoin-B_50: 21300100
+      GameCoin-GoldRedCoin-B_11: 21300022
+      GameCoin-GoldRedCoin-B_48: 21300096
+      GameCoin-GoldRedCoin-B_31: 21300062
+      GameCoin-GoldRedCoin-B_49: 21300098
+      GameCoin-GoldRedCoin-B_55: 21300110
+      GameCoin-GoldRedCoin-B_10: 21300020
+      GameCoin-GoldRedCoin-B_39: 21300078
+      GameCoin-GoldRedCoin-B_24: 21300048
+      GameCoin-GoldRedCoin-B_33: 21300066
+      GameCoin-GoldRedCoin-B_62: 21300124
+      GameCoin-GoldRedCoin-B_44: 21300088
+      GameCoin-GoldRedCoin-B_1: 21300002
+      GameCoin-GoldRedCoin-B_14: 21300028
+      GameCoin-GoldRedCoin-B_38: 21300076
+      GameCoin-GoldRedCoin-B_29: 21300058
+      GameCoin-GoldRedCoin-B_12: 21300024
+      GameCoin-GoldRedCoin-B_41: 21300082
+      GameCoin-GoldRedCoin-B_45: 21300090
+      GameCoin-GoldRedCoin-B_32: 21300064
+      GameCoin-GoldRedCoin-B_18: 21300036
+      GameCoin-GoldRedCoin-B_26: 21300052
+      GameCoin-GoldRedCoin-B_57: 21300114
+      GameCoin-GoldRedCoin-B_61: 21300122
+      GameCoin-GoldRedCoin-B_47: 21300094
+      GameCoin-GoldRedCoin-B_30: 21300060
+      GameCoin-GoldRedCoin-B_46: 21300092
+      GameCoin-GoldRedCoin-B_17: 21300034
+      GameCoin-GoldRedCoin-B_9: 21300018
+      GameCoin-GoldRedCoin-B_13: 21300026
+      GameCoin-GoldRedCoin-B_3: 21300006
+      GameCoin-GoldRedCoin-B_53: 21300106
+      GameCoin-GoldRedCoin-B_21: 21300042
+      GameCoin-GoldRedCoin-B_58: 21300116
+      GameCoin-GoldRedCoin-B_27: 21300054
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

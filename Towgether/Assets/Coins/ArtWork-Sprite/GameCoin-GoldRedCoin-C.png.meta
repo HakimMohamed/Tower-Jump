@@ -150,6 +150,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1132,6 +1133,49 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GameCoin-GoldRedCoin-C_26: 21300052
+      GameCoin-GoldRedCoin-C_14: 21300028
+      GameCoin-GoldRedCoin-C_18: 21300036
+      GameCoin-GoldRedCoin-C_2: 21300004
+      GameCoin-GoldRedCoin-C_34: 21300068
+      GameCoin-GoldRedCoin-C_24: 21300048
+      GameCoin-GoldRedCoin-C_20: 21300040
+      GameCoin-GoldRedCoin-C_0: 21300000
+      GameCoin-GoldRedCoin-C_38: 21300076
+      GameCoin-GoldRedCoin-C_25: 21300050
+      GameCoin-GoldRedCoin-C_40: 21300080
+      GameCoin-GoldRedCoin-C_5: 21300010
+      GameCoin-GoldRedCoin-C_12: 21300024
+      GameCoin-GoldRedCoin-C_6: 21300012
+      GameCoin-GoldRedCoin-C_32: 21300064
+      GameCoin-GoldRedCoin-C_33: 21300066
+      GameCoin-GoldRedCoin-C_36: 21300072
+      GameCoin-GoldRedCoin-C_7: 21300014
+      GameCoin-GoldRedCoin-C_10: 21300020
+      GameCoin-GoldRedCoin-C_30: 21300060
+      GameCoin-GoldRedCoin-C_8: 21300016
+      GameCoin-GoldRedCoin-C_19: 21300038
+      GameCoin-GoldRedCoin-C_22: 21300044
+      GameCoin-GoldRedCoin-C_27: 21300054
+      GameCoin-GoldRedCoin-C_11: 21300022
+      GameCoin-GoldRedCoin-C_9: 21300018
+      GameCoin-GoldRedCoin-C_41: 21300082
+      GameCoin-GoldRedCoin-C_31: 21300062
+      GameCoin-GoldRedCoin-C_16: 21300032
+      GameCoin-GoldRedCoin-C_37: 21300074
+      GameCoin-GoldRedCoin-C_39: 21300078
+      GameCoin-GoldRedCoin-C_35: 21300070
+      GameCoin-GoldRedCoin-C_1: 21300002
+      GameCoin-GoldRedCoin-C_29: 21300058
+      GameCoin-GoldRedCoin-C_28: 21300056
+      GameCoin-GoldRedCoin-C_17: 21300034
+      GameCoin-GoldRedCoin-C_21: 21300042
+      GameCoin-GoldRedCoin-C_15: 21300030
+      GameCoin-GoldRedCoin-C_3: 21300006
+      GameCoin-GoldRedCoin-C_23: 21300046
+      GameCoin-GoldRedCoin-C_13: 21300026
+      GameCoin-GoldRedCoin-C_4: 21300008
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

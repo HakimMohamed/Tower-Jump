@@ -144,6 +144,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1048,6 +1049,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      grotto-tiles_0: 21300000
+      grotto-tiles_8: 21300016
+      grotto-tiles_11: 21300022
+      grotto-tiles_5: 21300010
+      grotto-tiles_35: 21300070
+      grotto-tiles_12: 21300024
+      grotto-tiles_16: 21300032
+      grotto-tiles_23: 21300046
+      grotto-tiles_25: 21300050
+      grotto-tiles_31: 21300062
+      grotto-tiles_17: 21300034
+      grotto-tiles_24: 21300048
+      grotto-tiles_38: 21300076
+      grotto-tiles_7: 21300014
+      grotto-tiles_39: 21300078
+      grotto-tiles_21: 21300042
+      grotto-tiles_27: 21300054
+      grotto-tiles_32: 21300064
+      grotto-tiles_28: 21300056
+      grotto-tiles_29: 21300058
+      grotto-tiles_4: 21300008
+      grotto-tiles_33: 21300066
+      grotto-tiles_34: 21300068
+      grotto-tiles_18: 21300036
+      grotto-tiles_37: 21300074
+      grotto-tiles_20: 21300040
+      grotto-tiles_30: 21300060
+      grotto-tiles_3: 21300006
+      grotto-tiles_6: 21300012
+      grotto-tiles_13: 21300026
+      grotto-tiles_1: 21300002
+      grotto-tiles_10: 21300020
+      grotto-tiles_19: 21300038
+      grotto-tiles_9: 21300018
+      grotto-tiles_22: 21300044
+      grotto-tiles_2: 21300004
+      grotto-tiles_26: 21300052
+      grotto-tiles_36: 21300072
+      grotto-tiles_14: 21300028
+      grotto-tiles_15: 21300030
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

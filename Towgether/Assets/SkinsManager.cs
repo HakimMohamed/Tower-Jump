@@ -223,27 +223,27 @@ public class SkinsManager : MonoBehaviour
                 priceOfSkin.SetActive(true);
                 if (selectedSkin == 2)
                 {
-                    priceOfSkin.GetComponent<Text>().text = 5000.ToString();
+                    priceOfSkin.GetComponent<Text>().text = "Price : 5000";
 
                 }
                 if (selectedSkin == 3)
                 {
-                    priceOfSkin.GetComponent<Text>().text = 10000.ToString();
+                    priceOfSkin.GetComponent<Text>().text = "Price : 10000";
 
                 }
                 if (selectedSkin == 4)
                 {
-                    priceOfSkin.GetComponent<Text>().text = 15000.ToString();
+                    priceOfSkin.GetComponent<Text>().text = "Price : 15000";
 
                 }
                 if (selectedSkin == 5)
                 {
-                    priceOfSkin.GetComponent<Text>().text = 20000.ToString();
+                    priceOfSkin.GetComponent<Text>().text = "Price : 20000";
 
                 }
                 if (selectedSkin == 6)
                 {
-                    priceOfSkin.GetComponent<Text>().text = 30000.ToString();
+                    priceOfSkin.GetComponent<Text>().text = "Price : 30000";
 
                 }
             }
@@ -253,34 +253,7 @@ public class SkinsManager : MonoBehaviour
                 PurchaseSkinButton.SetActive(false);
                 priceOfSkin.SetActive(false);
                 PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skinsList[selectedSkin] as RuntimeAnimatorController;
-                //if (selectedSkin == 0)
-                //{
-
-                //}
-                //if (selectedSkin == 1)
-                //{
-
-                //}
-                //if (selectedSkin == 2)
-                //{
-
-                //}
-                //if (selectedSkin == 3)
-                //{
-
-                //}
-                //if (selectedSkin == 4)
-                //{
-
-                //}
-                //if (selectedSkin == 5)
-                //{
-
-                //}
-                //if (selectedSkin == 6)
-                //{
-                   
-                //}
+                
                 PlayerPrefs.SetInt("selectedSkin", selectedSkin);
                 PlayerPrefs.Save();               
             }

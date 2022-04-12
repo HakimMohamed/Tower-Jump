@@ -144,6 +144,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1084,6 +1085,47 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      GameCoin-GoldWhite-C_7: 21300014
+      GameCoin-GoldWhite-C_29: 21300058
+      GameCoin-GoldWhite-C_12: 21300024
+      GameCoin-GoldWhite-C_35: 21300070
+      GameCoin-GoldWhite-C_28: 21300056
+      GameCoin-GoldWhite-C_39: 21300078
+      GameCoin-GoldWhite-C_32: 21300064
+      GameCoin-GoldWhite-C_1: 21300002
+      GameCoin-GoldWhite-C_3: 21300006
+      GameCoin-GoldWhite-C_4: 21300008
+      GameCoin-GoldWhite-C_8: 21300016
+      GameCoin-GoldWhite-C_22: 21300044
+      GameCoin-GoldWhite-C_24: 21300048
+      GameCoin-GoldWhite-C_27: 21300054
+      GameCoin-GoldWhite-C_0: 21300000
+      GameCoin-GoldWhite-C_37: 21300074
+      GameCoin-GoldWhite-C_34: 21300068
+      GameCoin-GoldWhite-C_5: 21300010
+      GameCoin-GoldWhite-C_19: 21300038
+      GameCoin-GoldWhite-C_20: 21300040
+      GameCoin-GoldWhite-C_31: 21300062
+      GameCoin-GoldWhite-C_9: 21300018
+      GameCoin-GoldWhite-C_23: 21300046
+      GameCoin-GoldWhite-C_33: 21300066
+      GameCoin-GoldWhite-C_30: 21300060
+      GameCoin-GoldWhite-C_15: 21300030
+      GameCoin-GoldWhite-C_17: 21300034
+      GameCoin-GoldWhite-C_18: 21300036
+      GameCoin-GoldWhite-C_10: 21300020
+      GameCoin-GoldWhite-C_6: 21300012
+      GameCoin-GoldWhite-C_16: 21300032
+      GameCoin-GoldWhite-C_21: 21300042
+      GameCoin-GoldWhite-C_38: 21300076
+      GameCoin-GoldWhite-C_11: 21300022
+      GameCoin-GoldWhite-C_26: 21300052
+      GameCoin-GoldWhite-C_2: 21300004
+      GameCoin-GoldWhite-C_36: 21300072
+      GameCoin-GoldWhite-C_25: 21300050
+      GameCoin-GoldWhite-C_13: 21300026
+      GameCoin-GoldWhite-C_14: 21300028
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
