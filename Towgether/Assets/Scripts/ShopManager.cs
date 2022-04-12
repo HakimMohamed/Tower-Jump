@@ -14,6 +14,8 @@ public class ShopManager : MonoBehaviour
     [SerializeField] GameObject Coin;
     [SerializeField] Toggle TiltYourPhoneToggle;
     [SerializeField] Toggle ArrowToggle;
+    [SerializeField] GameObject Note1;
+    [SerializeField] GameObject Note2;
     int BoolTiltYourPhoneToggle;
     int ArrowToggleBool;
     void Awake()
@@ -28,14 +30,24 @@ public class ShopManager : MonoBehaviour
         Coin.SetActive(true);
 
 
-        ArrowToggleBool = PlayerPrefs.GetInt("Arrows", 0);
-        if (ArrowToggleBool == 1)
-            ArrowToggle.isOn = intToBool(ArrowToggleBool);
+        
 
-
-        BoolTiltYourPhoneToggle = PlayerPrefs.GetInt("Tilt", 0);
+       
         if (BoolTiltYourPhoneToggle == 1)
+        {
+            BoolTiltYourPhoneToggle = PlayerPrefs.GetInt("Tilt", 0);
             TiltYourPhoneToggle.isOn = intToBool(BoolTiltYourPhoneToggle);
+            Note1.SetActive(true);
+            Note2.SetActive(false);
+        }
+        else if (ArrowToggleBool == 1)
+
+        {
+            ArrowToggleBool = PlayerPrefs.GetInt("Arrows", 0);
+            ArrowToggle.isOn = intToBool(ArrowToggleBool);
+            Note1.SetActive(false);
+            Note2.SetActive(true);  
+        }
 
 
     }
@@ -44,10 +56,21 @@ public class ShopManager : MonoBehaviour
     void Update()
     {
         BoolTiltYourPhoneToggle = PlayerPrefs.GetInt("Tilt", 0);
-        TiltYourPhoneToggle.isOn = intToBool(BoolTiltYourPhoneToggle);
-
         ArrowToggleBool = PlayerPrefs.GetInt("Arrows", 0);
-        ArrowToggle.isOn = intToBool(ArrowToggleBool);
+
+        if(BoolTiltYourPhoneToggle == 1)
+        {
+            TiltYourPhoneToggle.isOn = intToBool(BoolTiltYourPhoneToggle);
+            Note1.SetActive(true);
+            Note2.SetActive(false);
+        }
+        else if (ArrowToggleBool == 1)
+
+        {
+            ArrowToggle.isOn = intToBool(ArrowToggleBool);
+            Note1.SetActive(false);
+            Note2.SetActive(true);
+        }
     }
 
     public void SettingsButton()

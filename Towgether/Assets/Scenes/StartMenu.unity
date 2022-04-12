@@ -373,6 +373,8 @@ MonoBehaviour:
   Coin: {fileID: 417815192}
   TiltYourPhoneToggle: {fileID: 1077394557}
   ArrowToggle: {fileID: 483195386}
+  Note1: {fileID: 2065280141}
+  Note2: {fileID: 613351890}
 --- !u!4 &310837596
 Transform:
   m_ObjectHideFlags: 0

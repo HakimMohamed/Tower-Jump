@@ -13,6 +13,8 @@ public static class SoundManager
         boost,
         FullChargeBoost,
         BuySkin,
+        nextskin,
+        previousskin,
     }
     
     private static Dictionary<Sound, float> soundtimerDictionary;

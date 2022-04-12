@@ -154,13 +154,16 @@ public class SkinsManager : MonoBehaviour
     
     public void NextOption()
     {
-              
+        SoundManager.PlaySound(SoundManager.Sound.nextskin);
+
         currentSkin.NextSkin();
         currentSkin.SetSkin();
        
     }
     public void BackOption()
     {
+        SoundManager.PlaySound(SoundManager.Sound.previousskin);
+
         currentSkin.previusSkin();
         currentSkin.SetSkin();
 

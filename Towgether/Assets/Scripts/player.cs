@@ -72,7 +72,7 @@ public class player : MonoBehaviour
         
     }
 
-   public void HandleBoostUsage()
+   public void HandleBoostUsage_Tilt()
     {
     
         if (Arrows == 1 && Input.touchCount == 2 && Tilt != 1 && BoostCapacity > 0 && !increaseBoost || Tilt == 1&&Input.GetMouseButton(0) && BoostCapacity > 0 && !increaseBoost&&Arrows!=1)
@@ -126,7 +126,6 @@ public class player : MonoBehaviour
     }
 
 
-   
      void BoostButton()
     {
         if (Arrows == 1 && Tilt != 1 && BoostCapacity > 0 && !increaseBoost)
@@ -230,30 +229,32 @@ public class player : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(GroundCheckPosition.position, CheckRaidus, WhatIsGround);
 
-      
+
+
+
+
+        HandleBoostUsage_Arrows();
+        timeForPowerUpHandler();
+        HandleBoostUsage_Tilt();
+       
+    }
+   void HandleBoostUsage_Arrows()
+    {
         if (Tilt == 1)
         {
             movement = Input.acceleration.x * movementSpeed;
             rb.velocity = new Vector2(movement, rb.velocity.y);
             Handlingflip();
         }
+        //movement = Input.GetAxisRaw("Horizontal")*movementSpeed;
 
 
         if (transform.position.y > hieghstScorePostion)
         {
             // new Score
             NewScoreText.SetActive(true);
-
         }
-
-        //movement = Input.GetAxisRaw("Horizontal")*movementSpeed;
-
-        HandleBoostUsage();
-        timeForPowerUpHandler();
-
-       
     }
-   
    
     
    
@@ -303,9 +304,6 @@ public class player : MonoBehaviour
         }
        
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-       
-    }
+    
 
 }
