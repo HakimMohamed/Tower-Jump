@@ -32,7 +32,7 @@ public class levelgen : MonoBehaviour
     private void Awake()
     {
         PlatformList = new List<Platform>();
-        maxTimer = 0.20f;
+        maxTimer = 0.30f;
         GameStarted = false;
         Counter_for_platforms = 0;
         RandomForTypeOfPlatform = 0;
@@ -51,13 +51,7 @@ public class levelgen : MonoBehaviour
     }
     private void Start()
     {
-        //Transform playGroundPlatform = Instantiate(GameAssets.Getinstance().platform, new Vector3(0,0,-3f), Quaternion.identity);
-        //SpriteRenderer spboxColliderplayGroundPlatform = playGroundPlatform.GetComponent<SpriteRenderer>();
-        //BoxCollider2D boxColliderplayGroundPlatform = playGroundPlatform.GetComponent<BoxCollider2D>();
-        //spboxColliderplayGroundPlatform.size = new Vector2(7f, 1f);
-        //boxColliderplayGroundPlatform.size = new Vector2(7f - 1f, 0.14f);
-        //boxColliderplayGroundPlatform.offset = new Vector2(0, 0);
-
+       
         for (int i = 0; i < 10; i++)
         {
             Transform platform1 = Instantiate(GameAssets.Getinstance().platform, firstPlatforms, Quaternion.identity);    
