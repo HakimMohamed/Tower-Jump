@@ -683,7 +683,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 204.397, y: 620.12}
+  m_AnchoredPosition: {x: 204.4, y: 559}
   m_SizeDelta: {x: 391.21, y: 102.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &173215257
@@ -9237,8 +9237,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   platform: {fileID: 318785696806549142, guid: 935cff68d0381f94498a9ff098a5c71c, type: 3}
   RedPlatform: {fileID: 9174083934595169092, guid: fbf99347b30663c4f8a81abc5d9c215e, type: 3}
-  PinkPlatform: {fileID: 8259140917752075454, guid: bf14cabc1e3686a49be2c5b25d513532, type: 3}
-  WoodPlatform: {fileID: 2629987700137832313, guid: e8fc93c30c15d2640a5dea949adf4bc7, type: 3}
   OutlinePlatformPlatform: {fileID: 6366806317960051969, guid: 940c14798e2f54b48b471d552465fe35, type: 3}
   DissolvingPlatform: {fileID: 6333384883717823871, guid: 66fe8581e8a90bc4a96395fc1ab1c3c8, type: 3}
   Jump_pad: {fileID: 5512265590632454243, guid: 8615e89b8d1a7f34289d388e9439ca66, type: 3}

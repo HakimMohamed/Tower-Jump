@@ -17,8 +17,6 @@ public class GameAssets : MonoBehaviour
     [Header("Platforms")]
     public Transform platform;
     public Transform RedPlatform;
-    public Transform PinkPlatform;
-    public Transform WoodPlatform;
     public Transform OutlinePlatformPlatform;
     public Transform DissolvingPlatform;
 

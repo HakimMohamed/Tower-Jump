@@ -187,13 +187,7 @@ public class levelgen : MonoBehaviour
                 
                 CreatePlatform(startPosition1, GameAssets.Getinstance().platform);
                 break;
-
-           
-
-            case PlatformEnum.pinkplatform:
-                
-                CreatePlatform(startPosition1, GameAssets.Getinstance().WoodPlatform);
-                break;
+         
 
             case PlatformEnum.OutlinePlatformPlatform:
                 
@@ -204,10 +198,7 @@ public class levelgen : MonoBehaviour
                 CreatePlatform(startPosition1,  GameAssets.Getinstance().OutlinePlatformPlatform);
                 break;
 
-            case PlatformEnum.DissolvingPlatform:
-                
-                CreatePlatform(startPosition1, GameAssets.Getinstance().PinkPlatform);
-                break;
+            
 
             
         }
@@ -216,14 +207,11 @@ public class levelgen : MonoBehaviour
     {
         
         if (Counter_for_platforms%15==0)
-            RandomForTypeOfPlatform = Random.Range(0,5);
+            RandomForTypeOfPlatform = Random.Range(0,3);
         
         
             if (RandomForTypeOfPlatform == 1) return PlatformEnum.DissolvingPlatform;
-            if (RandomForTypeOfPlatform == 2) return PlatformEnum.woodPlatform;
-            if (RandomForTypeOfPlatform == 3) return PlatformEnum.platform;
-            if (RandomForTypeOfPlatform == 4) return PlatformEnum.pinkplatform;
-            
+            if (RandomForTypeOfPlatform == 2) return PlatformEnum.platform;            
 
          return PlatformEnum.OutlinePlatformPlatform;
         
