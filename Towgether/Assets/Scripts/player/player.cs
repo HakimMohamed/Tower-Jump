@@ -61,7 +61,7 @@ public class player : MonoBehaviour
         NewScoreText.SetActive(false);
         BoostCapacityMax = 1f;
         BoostCapacity = 0f;
-        BoostCooldownMax = 5f;
+        BoostCooldownMax = 7f;
         increaseBoost = true;
         BoostCooldown += BoostCooldownMax;
         boostScript.SetMaxBoost(BoostCapacityMax);

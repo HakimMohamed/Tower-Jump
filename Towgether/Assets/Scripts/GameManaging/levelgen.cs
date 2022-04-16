@@ -108,7 +108,7 @@ public class levelgen : MonoBehaviour
                 timer = timermax;
             }
         }
-        if (rb.velocity.y > 200f)
+        if (rb.velocity.y > 170f)
         {
             setPlatform(GetPlatform());
             Debug.Log("threshold");

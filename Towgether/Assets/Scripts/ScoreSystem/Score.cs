@@ -25,7 +25,10 @@ public class Score : MonoBehaviour
     float timermax;
     void AddScore()
     {
+       
         scorenum++;
+        score.text = scorenum.ToString("0").Normalize();
+
     }
     void AddGold()
     {
@@ -54,12 +57,9 @@ public class Score : MonoBehaviour
        
         if (player.position.y > 0 && player.position.y > scorenum)
         {
-            AddScore();
-            
-            
+            AddScore();                      
         }
 
-        score.text = scorenum.ToString("0").Normalize();
         //If our scoree is greter than highscore, set new higscore and save.
 
         if (scorenum > highScore)
