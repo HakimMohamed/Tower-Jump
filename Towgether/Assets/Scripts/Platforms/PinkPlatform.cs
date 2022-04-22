@@ -20,7 +20,7 @@ public class PinkPlatform : MonoBehaviour
     {
          if (collision.relativeVelocity.y <= 0f && collision.transform.tag == "Player" && playerscript.isGrounded && playerscript.timerForPowerUp > 0)
         {
-            player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerscript.jumpforce * 1.4f, ForceMode2D.Impulse);
+            player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * playerscript.jumpforce * 1.7f, ForceMode2D.Impulse);
 
             playerscript.Dust2.Play();
             SoundManager.PlaySound(SoundManager.Sound.Jump);

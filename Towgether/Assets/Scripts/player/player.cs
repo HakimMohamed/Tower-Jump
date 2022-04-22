@@ -7,7 +7,6 @@ public class player : MonoBehaviour
 {
     [SerializeField]public ParticleSystem Dust;
     [SerializeField]public ParticleSystem Dust2;
-    [SerializeField] public ParticleSystem Dust3;
 
     Rigidbody2D rb;
    
@@ -71,6 +70,11 @@ public class player : MonoBehaviour
         hieghstScorePostion = PlayerPrefs.GetInt("HighScore", 0);
         Instantiate(HighestScore, new Vector2(0, hieghstScorePostion), Quaternion.identity);
 
+        if (Arrows == 0&&Tilt==0)
+        {
+            Tilt = 1;
+            PlayerPrefs.SetInt("Arrows", Tilt);
+        }
 
     }
     public void HandleBoostUsage_Tilt()
@@ -90,7 +94,7 @@ public class player : MonoBehaviour
         }
         else
         {           
-             rb.gravityScale = 14f;
+           rb.gravityScale = 14f;
            Dust.Stop();
 
         }
@@ -141,14 +145,7 @@ public class player : MonoBehaviour
 
         }
 
-        if (rb.velocity.y >= 150f)
-        {
-            rb.gravityScale += Time.deltaTime * 4444f;
-        }
-        else if (rb.velocity.y < 20f)
-        {
-            rb.gravityScale = 14f;
-        }
+        
 
         if (BoostCapacity < 1f)
         {
@@ -213,18 +210,18 @@ public class player : MonoBehaviour
     public void StopMovingForLeftArrow()
     {
 
-        rb.velocity = new Vector2(-0.01f,rb.velocity.y);
+        rb.velocity = new Vector2(0f,rb.velocity.y);
     }
     public void StopMovingForRightArrow()
     {
 
-        rb.velocity = new Vector2(0.01f, rb.velocity.y);
+        rb.velocity = new Vector2(0f, rb.velocity.y);
     }
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(GroundCheckPosition.position, CheckRaidus, WhatIsGround);
 
-
+       
 
         if (rb.velocity.y >= 120f)
         {
@@ -234,7 +231,6 @@ public class player : MonoBehaviour
         {
             rb.gravityScale = 14f;
         }
-
         HandleBoostUsage_Arrows();
         timeForPowerUpHandler();
         HandleBoostUsage_Tilt();
@@ -274,12 +270,12 @@ public class player : MonoBehaviour
     }
     void Handlingflip()
     {
-        if (movement < 0)
+        if (movement <= 0)
         {
             flip(true);
            
         }
-        else
+        else if(movement>0)
         {
             flip(false);
            
@@ -293,7 +289,10 @@ public class player : MonoBehaviour
        
     }
 
+    //player.GetComponent<Rigidbody2D>().AddForce(Vector2.up* playerscript.jumpforce* 1.6f, ForceMode2D.Impulse);
 
+    //playerscript.Dust2.Play();
+    //        SoundManager.PlaySound(SoundManager.Sound.Jump);
     private void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Arrow"))

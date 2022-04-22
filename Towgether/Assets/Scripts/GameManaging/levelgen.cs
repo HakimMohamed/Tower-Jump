@@ -11,7 +11,7 @@ public class levelgen : MonoBehaviour
    
    
     List<Platform> PlatformList;
-    bool GameStarted;
+    
     [SerializeField] private Transform PositionToDelete;
     [SerializeField] Transform player;
     int counter_To_Spawn_JumpPad;
@@ -24,7 +24,7 @@ public class levelgen : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Transform Camera;
 
-    public enum PlatformEnum { platform,  woodPlatform, pinkplatform, OutlinePlatformPlatform, DissolvingPlatform }
+    public enum PlatformEnum { platform, OutlinePlatformPlatform, DissolvingPlatform }
 
 
     float timerForGapSize;
@@ -37,7 +37,6 @@ public class levelgen : MonoBehaviour
         timermax = 0.20f;
         timer = timermax;
         PlatformList = new List<Platform>();
-        GameStarted = false;
         Counter_for_platforms = 0;
         RandomForTypeOfPlatform = 0;
         setPlatform(PlatformEnum.platform);
@@ -116,7 +115,6 @@ public class levelgen : MonoBehaviour
     }
     void Spawn()
     {
-        Debug.Log(Counter_for_platforms);
         setPlatform(GetPlatform());
     }
     
@@ -194,11 +192,11 @@ public class levelgen : MonoBehaviour
 
             case PlatformEnum.OutlinePlatformPlatform:
                 
-                CreatePlatform(startPosition1,GameAssets.Getinstance().DissolvingPlatform);
+                CreatePlatform(startPosition1,GameAssets.Getinstance().OutlinePlatformPlatform);
                 break;
-            case PlatformEnum.woodPlatform:
+            case PlatformEnum.DissolvingPlatform:
                 
-                CreatePlatform(startPosition1,  GameAssets.Getinstance().OutlinePlatformPlatform);
+                CreatePlatform(startPosition1,  GameAssets.Getinstance().DissolvingPlatform);
                 break;
 
             default:
@@ -212,13 +210,15 @@ public class levelgen : MonoBehaviour
     {
         
         if (Counter_for_platforms%20==0)
-            RandomForTypeOfPlatform = Random.Range(0,3);
+            RandomForTypeOfPlatform = Random.Range(1,4);
         
         
             if (RandomForTypeOfPlatform == 1) return PlatformEnum.DissolvingPlatform;
             if (RandomForTypeOfPlatform == 2) return PlatformEnum.platform;
+            if (RandomForTypeOfPlatform == 3) return PlatformEnum.OutlinePlatformPlatform;
 
-        return PlatformEnum.OutlinePlatformPlatform;
+
+        return PlatformEnum.platform;
         
     }
     private class Platform

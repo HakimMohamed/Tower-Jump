@@ -13,7 +13,6 @@ public class ShopManager : MonoBehaviour
     [SerializeField] GameObject SettingsButtonObject;
     [SerializeField] GameObject SettingsSectoin;
     [SerializeField] GameObject CoinsAmount;
-    [SerializeField] GameObject Coin;
     [SerializeField] Toggle TiltYourPhoneToggle;
     [SerializeField] Toggle ArrowToggle;
     [SerializeField] GameObject Note1;
@@ -37,7 +36,6 @@ public class ShopManager : MonoBehaviour
         SettingsButtonObject.SetActive(true);
         SettingsSectoin.SetActive(false);
         CoinsAmount.SetActive(true);
-        Coin.SetActive(true);
 
         MainMenuCanvasObject = new DissolveItem(MainMenuCanvas, MainMenuCanvas.alpha);
         SkinsCanvasObject = new DissolveItem(SkinsCanvas, SkinsCanvas.alpha);
@@ -90,6 +88,10 @@ public class ShopManager : MonoBehaviour
 
 
     }
+    public void LoadingScene()
+    {
+        SceneManager.LoadScene("Loading");
+    }
     public void SettingsButton()
     {
         MainMenu.SetActive(false);
@@ -98,7 +100,6 @@ public class ShopManager : MonoBehaviour
         SettingsButtonObject.SetActive(false);
         SettingsSectoin.SetActive(true);
         CoinsAmount.SetActive(false);
-        Coin.SetActive(false);
         MainMenuCanvasObject.Fading = true;
         SkinsCanvasObject.Fading = true;
         settingssectionCanvasObject.Fading =false ;
@@ -113,7 +114,6 @@ public class ShopManager : MonoBehaviour
         SettingsButtonObject.SetActive(false);
         SettingsSectoin.SetActive(false);
         CoinsAmount.SetActive(true);
-        Coin.SetActive(true);
         MainMenuCanvasObject.Fading = true;
         SkinsCanvasObject.Fading = false;
         settingssectionCanvasObject.Fading =true ;
@@ -128,8 +128,7 @@ public class ShopManager : MonoBehaviour
         SettingsButtonObject.SetActive(true);
         SettingsSectoin.SetActive(false);
         CoinsAmount.SetActive(true);
-        Coin.SetActive(true);
-        MainMenuCanvasObject.Fading = false;
+         MainMenuCanvasObject.Fading = false;
         SkinsCanvasObject.Fading = true;
         settingssectionCanvasObject.Fading =true ;
 

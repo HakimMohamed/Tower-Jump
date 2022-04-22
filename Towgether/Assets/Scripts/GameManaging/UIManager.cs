@@ -89,6 +89,7 @@ public class UIManager : MonoBehaviour
     }
     void Update()
     {
+        Application.targetFrameRate = 300;
         Time.timeScale = 1f;
         if (Input.anyKey&& !IsGameStarted)
         {
@@ -260,7 +261,18 @@ public class UIManager : MonoBehaviour
     }
     public void ResumeButton()
     {
-        Arrowsobject.SetActive(true);
+        if (Arrows == 1)
+        {
+            Tilt.SetActive(false);
+            Arrowsobject.SetActive(false);
+
+        }
+        if (Tiltbool == 1)
+        {
+            Tilt.SetActive(false);
+            Arrowsobject.SetActive(false);
+
+        }
         Camera.GetComponent<camera>().enabled = true;
         Time.timeScale = 1f;
         PlayerScript.enabled = true;

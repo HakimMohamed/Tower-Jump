@@ -19,7 +19,7 @@ public class  AdsManager : MonoBehaviour,IUnityAdsListener
     {
         DontDestroyOnLoad(this);
 
-        Advertisement.Initialize(gameId, true);
+        Advertisement.Initialize(gameId, false);
         Advertisement.AddListener(this);
 
         if (instance == null)

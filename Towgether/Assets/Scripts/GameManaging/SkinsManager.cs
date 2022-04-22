@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-
+using UnityEngine.Purchasing;
 using UnityEngine;
 
 public class SkinsManager : MonoBehaviour
@@ -14,8 +13,9 @@ public class SkinsManager : MonoBehaviour
 
     [SerializeField]  GameObject PurchaseSkinButton;
     [SerializeField] GameObject priceOfSkin;
+    [SerializeField] GameObject priceOfSkinIAP;
     [SerializeField] GameObject EquipButtonObject;
-  
+    [SerializeField] GameObject RestorePurchaseBtn;
 
     bool Owned;
     CurrentSkin currentSkin;
@@ -30,19 +30,57 @@ public class SkinsManager : MonoBehaviour
 
     void Awake()
     {
-       //PlayerPrefs.DeleteAll();
-       //PlayerPrefs.SetInt("CurrentScore", 100000);
+       // PlayerPrefs.DeleteAll();
+        //PlayerPrefs.SetInt("CurrentScore", 100000);
+        DisableRestorePurchaseBtn();
         isSkinPurcahsed();       
         selectedSkin = PlayerPrefs.GetInt("selectedSkin", 0);
         PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skins[selectedSkin] as RuntimeAnimatorController;
-        currentSkin = new CurrentSkin(skins, Owned, PlayerObject, PurchaseSkinButton, priceOfSkin, EquipButtonObject);
+        currentSkin = new CurrentSkin(skins, Owned, PlayerObject, PurchaseSkinButton, priceOfSkin, EquipButtonObject, priceOfSkinIAP);
         PurchaseSkinButton.SetActive(false);
         priceOfSkin.SetActive(false);
+        priceOfSkinIAP.SetActive(false);
         EquipButtonObject.SetActive(true);
         CurrentMoney = PlayerPrefs.GetInt("CurrentScore", 0);
 
         
     }
+
+    private string AllskinId = "com.kemstroarab.towerjump.getallskins";
+
+    public void OnPurchaseComplete(Product product)
+    {
+
+        if (product.definition.id == AllskinId)
+        {
+            Debug.Log("pruchased");
+            PlayerPrefs.SetInt("Is_Third_SkinPurchased", 1);
+            PlayerPrefs.SetInt("Is_fourth_SkinPurchased", 1);
+            PlayerPrefs.SetInt("Is_fifth_SkinPurchased", 1);
+            PlayerPrefs.SetInt("Is_sixth_SkinPurchased", 1);
+            PlayerPrefs.SetInt("Is_seventh_SkinPurchased", 1);
+            Is_Third_SkinPurchased = 1;
+            Is_fourth_SkinPurchased = 1;
+            Is_fifth_SkinPurchased = 1;
+            Is_sixth_SkinPurchased = 1;
+            Is_seventh_SkinPurchased = 1;
+
+            PlayerObject.GetComponent<SpriteRenderer>().color = Color.white;
+            PurchaseSkinButton.SetActive(false);
+            priceOfSkin.SetActive(false);
+            priceOfSkinIAP.SetActive(false);
+            PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skins[selectedSkin] as RuntimeAnimatorController;       
+            SoundManager.PlaySound(SoundManager.Sound.BuySkin);
+            PlayerPrefs.Save();
+        }
+
+    }
+    public void OnPurchaseFailed(Product product, PurchaseFailureReason reason)
+    {
+        Debug.Log("purchace Failed");
+    }
+
+
     public void PurcahseButton()
     {
         if (selectedSkin == 2&& CurrentMoney>= 5000)
@@ -54,6 +92,7 @@ public class SkinsManager : MonoBehaviour
             PlayerObject.GetComponent<SpriteRenderer>().color = Color.white;
             PurchaseSkinButton.SetActive(false);
             priceOfSkin.SetActive(false);
+            priceOfSkinIAP.SetActive(false);
             PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skins[selectedSkin] as RuntimeAnimatorController;
             PlayerPrefs.SetInt("selectedSkin", selectedSkin);          
             CurrentMoney -= 5000;
@@ -70,6 +109,7 @@ public class SkinsManager : MonoBehaviour
             PlayerObject.GetComponent<SpriteRenderer>().color = Color.white;
             PurchaseSkinButton.SetActive(false);
             priceOfSkin.SetActive(false);
+            priceOfSkinIAP.SetActive(false);
             PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skins[selectedSkin] as RuntimeAnimatorController;
             PlayerPrefs.SetInt("selectedSkin", selectedSkin);          
             CurrentMoney -= 10000;
@@ -85,6 +125,8 @@ public class SkinsManager : MonoBehaviour
             PlayerObject.GetComponent<SpriteRenderer>().color = Color.white;
             PurchaseSkinButton.SetActive(false);
             priceOfSkin.SetActive(false);
+            priceOfSkinIAP.SetActive(false);
+
             PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skins[selectedSkin] as RuntimeAnimatorController;
             PlayerPrefs.SetInt("selectedSkin", selectedSkin);  
             CurrentMoney -= 15000;
@@ -100,6 +142,8 @@ public class SkinsManager : MonoBehaviour
             PlayerObject.GetComponent<SpriteRenderer>().color = Color.white;
             PurchaseSkinButton.SetActive(false);
             priceOfSkin.SetActive(false);
+            priceOfSkinIAP.SetActive(false);
+
             PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skins[selectedSkin] as RuntimeAnimatorController;
             PlayerPrefs.SetInt("selectedSkin", selectedSkin);
            
@@ -116,6 +160,7 @@ public class SkinsManager : MonoBehaviour
             PlayerObject.GetComponent<SpriteRenderer>().color = Color.white;
             PurchaseSkinButton.SetActive(false);
             priceOfSkin.SetActive(false);
+            priceOfSkinIAP.SetActive(false);
             PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skins[selectedSkin] as RuntimeAnimatorController;
             PlayerPrefs.SetInt("selectedSkin", selectedSkin);           
             CurrentMoney -= 30000;
@@ -124,7 +169,7 @@ public class SkinsManager : MonoBehaviour
         }
     }
 
-    void isSkinPurcahsed()
+    public void isSkinPurcahsed()
     {
        
         Is_Third_SkinPurchased = PlayerPrefs.GetInt("Is_Third_SkinPurchased", 0);
@@ -153,6 +198,7 @@ public class SkinsManager : MonoBehaviour
         PlayerPrefs.Save();
 
     }
+    
 
     public void EquipButton()
     {
@@ -182,9 +228,10 @@ public class SkinsManager : MonoBehaviour
         GameObject PlayerObject;
         GameObject PurchaseSkinButton;
         GameObject priceOfSkin;
+        GameObject priceOfSkinIAP;
         GameObject equipbutton;
      
-        public CurrentSkin(List<AnimatorOverrideController> skinsList, bool isOwned,GameObject Player, GameObject PurchaseSkinButton, GameObject priceOfSkin,GameObject equipbutton)
+        public CurrentSkin(List<AnimatorOverrideController> skinsList, bool isOwned,GameObject Player, GameObject PurchaseSkinButton, GameObject priceOfSkin,GameObject equipbutton, GameObject priceOfSkinIAP)
         {
             this.skinsList = skinsList;
             IsOwned = isOwned;
@@ -192,6 +239,7 @@ public class SkinsManager : MonoBehaviour
             this.PurchaseSkinButton = PurchaseSkinButton;
             this.priceOfSkin = priceOfSkin;
             this.equipbutton = equipbutton;
+            this.priceOfSkinIAP = priceOfSkinIAP;
         }
        bool isowned()
         {
@@ -230,30 +278,31 @@ public class SkinsManager : MonoBehaviour
                 PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skinsList[selectedSkin] as RuntimeAnimatorController;
                 PurchaseSkinButton.SetActive(true);
                 priceOfSkin.SetActive(true);
+                priceOfSkinIAP.SetActive(true);
                 equipbutton.SetActive(false);    
                 if (selectedSkin == 2)
                 {
-                    priceOfSkin.GetComponent<Text>().text = "Price : 5000";
+                    priceOfSkin.GetComponent<Text>().text = " 5000";
 
                 }
                 if (selectedSkin == 3)
                 {
-                    priceOfSkin.GetComponent<Text>().text = "Price : 10000";
+                    priceOfSkin.GetComponent<Text>().text = " 10000";
 
                 }
                 if (selectedSkin == 4)
                 {
-                    priceOfSkin.GetComponent<Text>().text = "Price : 15000";
+                    priceOfSkin.GetComponent<Text>().text = " 15000";
 
                 }
                 if (selectedSkin == 5)
                 {
-                    priceOfSkin.GetComponent<Text>().text = "Price : 20000";
+                    priceOfSkin.GetComponent<Text>().text = " 20000";
 
                 }
                 if (selectedSkin == 6)
                 {
-                    priceOfSkin.GetComponent<Text>().text = "Price : 30000";
+                    priceOfSkin.GetComponent<Text>().text = " 30000";
 
                 }
             }
@@ -261,10 +310,12 @@ public class SkinsManager : MonoBehaviour
             {
                 equipbutton.SetActive(true);
                 priceOfSkin.SetActive(false);
+                priceOfSkinIAP.SetActive(false);
                 PlayerObject.GetComponent<SpriteRenderer>().color = Color.white;
                 PurchaseSkinButton.SetActive(false);
                 PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skinsList[selectedSkin] as RuntimeAnimatorController;
             }
+            
 
         }
         public void NextSkin()
@@ -293,6 +344,7 @@ public class SkinsManager : MonoBehaviour
                 PlayerObject.GetComponent<SpriteRenderer>().color = Color.white;
                 PurchaseSkinButton.SetActive(false);
                 priceOfSkin.SetActive(false);
+                priceOfSkinIAP.SetActive(false);
                 PlayerObject.GetComponent<Animator>().runtimeAnimatorController = skinsList[selectedSkin] as RuntimeAnimatorController;
                 equipbutton.SetActive(false);
                 PlayerPrefs.SetInt("selectedSkin", selectedSkin);
@@ -315,4 +367,11 @@ public class SkinsManager : MonoBehaviour
 
     }
 
+    private void DisableRestorePurchaseBtn()
+    {
+        if(Application.platform != RuntimePlatform.IPhonePlayer)
+        {
+            RestorePurchaseBtn.SetActive(false);
+        }
+    }
 }
