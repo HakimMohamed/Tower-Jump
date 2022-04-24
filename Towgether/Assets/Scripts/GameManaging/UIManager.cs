@@ -50,13 +50,16 @@ public class UIManager : MonoBehaviour
         //Refrences
         WatchAdToContinue.SetActive(true);
         ResumeButtonPressed = false;
-        PlayerScript = GameObject.Find("Player").GetComponent<player>();
         positionTORestart = GameObject.Find("PositionToRestart").transform;
-        Player_transform = GameObject.Find("Player").transform;
+        PlayerScript = GameObject.Find("Player").GetComponent<player>();                
+        Player_transform = GameObject.Find("Player").transform;             
         rb = GameObject.Find("Player").GetComponent<Rigidbody2D>();
+        
         lvlgenscript = GameObject.Find("LevelGenerator").GetComponent<levelgen>();
         PlayerScript.enabled = true;
         rb.bodyType = RigidbodyType2D.Dynamic;
+
+        
 
         WatchedAdOnce = false;
         GameOverMenu.SetActive(false);

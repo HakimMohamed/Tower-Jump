@@ -15,11 +15,10 @@ public class ShopManager : MonoBehaviour
     [SerializeField] GameObject CoinsAmount;
     [SerializeField] Toggle TiltYourPhoneToggle;
     [SerializeField] Toggle ArrowToggle;
-    [SerializeField] GameObject Note1;
-    [SerializeField] GameObject Note2;
     [SerializeField] CanvasGroup MainMenuCanvas;
     [SerializeField] CanvasGroup SkinsCanvas;
     [SerializeField] CanvasGroup settingssectionCanvas;
+    [SerializeField] Text highestScore_Main_Menu;
     int BoolTiltYourPhoneToggle;
     int ArrowToggleBool;
 
@@ -47,15 +46,14 @@ public class ShopManager : MonoBehaviour
         if (BoolTiltYourPhoneToggle == 1)
         {
            TiltYourPhoneToggle.isOn = intToBool(BoolTiltYourPhoneToggle);
-            Note1.SetActive(true);
-            Note2.SetActive(false);
+            
         }
         else if (ArrowToggleBool == 1)
         {
             ArrowToggle.isOn = intToBool(ArrowToggleBool);
-            Note1.SetActive(false);
-            Note2.SetActive(true);  
+            
         }
+        highestScore_Main_Menu.text =  PlayerPrefs.GetInt("HighScore", 0).ToString();
 
         MainMenuCanvasObject.Fading = false;
         SkinsCanvasObject.Fading = true;

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
+using Photon.Pun;
 using UnityEngine;
 
 public class player : MonoBehaviour
@@ -9,7 +10,7 @@ public class player : MonoBehaviour
     [SerializeField]public ParticleSystem Dust2;
 
     Rigidbody2D rb;
-   
+    PhotonView view;
     SpriteRenderer sp;
 
     [Header("GroundCheck")]
@@ -29,8 +30,8 @@ public class player : MonoBehaviour
     [Header("PowerUp")]
     [SerializeField]public float timerForPowerUp;
     [SerializeField] float timerForPowerUpMax;
-   
 
+    Canvas canvas;
 
     [Header("Boost")]
     [SerializeField] public float BoostCapacity;
@@ -48,6 +49,7 @@ public class player : MonoBehaviour
     bool iSholdingBoostButton;
 
     int hieghstScorePostion;
+
    
     private void Start()
     {
@@ -56,6 +58,7 @@ public class player : MonoBehaviour
 
         rb = GetComponent<Rigidbody2D>();
         sp = GetComponent<SpriteRenderer>();
+
 
         NewScoreText.SetActive(false);
         BoostCapacityMax = 1f;
@@ -69,7 +72,7 @@ public class player : MonoBehaviour
         boostScript.setboost(0f);
         hieghstScorePostion = PlayerPrefs.GetInt("HighScore", 0);
         Instantiate(HighestScore, new Vector2(0, hieghstScorePostion), Quaternion.identity);
-
+        view = GetComponent<PhotonView>();
         if (Arrows == 0&&Tilt==0)
         {
             Tilt = 1;
@@ -180,9 +183,9 @@ public class player : MonoBehaviour
         if ( Input.touchCount >=2&&Arrows == 1 && Tilt != 1 && BoostCapacity > 0 && !increaseBoost)
         {
             BoostButton();
-          
-            
-            
+            Vector3 v = rb.velocity;
+            v.x = Vector2.zero.x;
+            rb.velocity = v;
         }
         flip(true);
     }
@@ -196,11 +199,10 @@ public class player : MonoBehaviour
         }
         if (Input.touchCount >= 2 &&Arrows == 1 && Tilt != 1 && BoostCapacity > 0 && !increaseBoost)
         {
-
             BoostButton();
-           
-
-           
+            Vector3 v = rb.velocity;
+            v.x = Vector2.zero.x;
+            rb.velocity = v;
 
         }
         flip(false);
@@ -219,21 +221,24 @@ public class player : MonoBehaviour
     }
     void Update()
     {
-        isGrounded = Physics2D.OverlapCircle(GroundCheckPosition.position, CheckRaidus, WhatIsGround);
 
-       
+        if (view.IsMine)
+        {
+            isGrounded = Physics2D.OverlapCircle(GroundCheckPosition.position, CheckRaidus, WhatIsGround);
 
-        if (rb.velocity.y >= 120f)
-        {
-            rb.gravityScale += Time.deltaTime * 4444f;
+            if (rb.velocity.y >= 120f)
+            {
+                rb.gravityScale += Time.deltaTime * 4444f;
+            }
+            else if (rb.velocity.y < 20f)
+            {
+                rb.gravityScale = 14f;
+            }
+            HandleBoostUsage_Arrows();
+            timeForPowerUpHandler();
+            HandleBoostUsage_Tilt();
         }
-        else if (rb.velocity.y < 20f)
-        {
-            rb.gravityScale = 14f;
-        }
-        HandleBoostUsage_Arrows();
-        timeForPowerUpHandler();
-        HandleBoostUsage_Tilt();
+
        
     }
    void HandleBoostUsage_Arrows()

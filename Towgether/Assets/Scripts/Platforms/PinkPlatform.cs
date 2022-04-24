@@ -12,6 +12,9 @@ public class PinkPlatform : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player");
+        if(player == null)
+            player = GameObject.Find("Player(Clone)");
+
         playerscript = player.GetComponent<player>();
 
     }
