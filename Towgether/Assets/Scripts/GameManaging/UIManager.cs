@@ -81,9 +81,10 @@ public class UIManager : MonoBehaviour
             Tilt.SetActive(true);
             Arrowsobject.SetActive(false);
         }
-
+       
     }
-    
+ 
+  
     void GameStartedMainCameraEvent()
     {
         BoostBar.SetActive(true);
@@ -299,10 +300,21 @@ public class UIManager : MonoBehaviour
 
 
 
+    private int boolToint(bool boolean)
+    {
+        if (boolean)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
 
-   
+    }
 
-    
+
+
 
 
 }
